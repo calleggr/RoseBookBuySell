@@ -11,13 +11,16 @@ class User(EndpointsModel):
 
 class Listing(EndpointsModel):
     #should belong to user and have a book
+    
     pass
 
 class Offer(EndpointsModel):
     #should belong to a listing and a user
+    
     pass
 
 class Book(EndpointsModel):
     #should belong to a listing
+    
     pass
 
