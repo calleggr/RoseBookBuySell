@@ -14,8 +14,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import os
+from google.appengine.ext import ndb
+import jinja2
 import webapp2
 
+#user
+USER_KEY = ndb.key('Entity', 'user_root')
+#listing
+LISTING_KEY = ndb.key('Entity', 'listing_root')
+#offer
+OFFER_KEY = ndb.key('Entity', 'offer_root')
+#book
+BOOK_KEY = ndb.key('Entity', 'book_root')
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
