@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Master-->
+        <scene sceneID="cUi-kZ-frf">
+            <objects>
+                <navigationController title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Nbc-q7-FjW" kind="relationship" relationship="rootViewController" id="Ukk-Hr-3SC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-277.5" y="63.75"/>
+        </scene>
+        <!--Rose Book Buy/Sell-->
+        <scene sceneID="wMd-7w-UcZ">
+            <objects>
+                <viewController id="Nbc-q7-FjW" customClass="LoginPageViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="06l-Lh-RVa"/>
+                        <viewControllerLayoutGuide type="bottom" id="0mo-P2-M1I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Cp-NH-Gnh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwT-aK-6fI">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuM-xf-YWM">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzK-rj-Adq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="B5t-8P-scV" kind="showDetail" identifier="SignInSegue" id="4rv-ew-75Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivZ-mo-qZu">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="6Dc-WV-iV7" kind="showDetail" identifier="CreateAccountSegue" id="Dkp-iq-vbe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lzK-rj-Adq" firstAttribute="leading" secondItem="2Cp-NH-Gnh" secondAttribute="leadingMargin" constant="160" id="1sF-Qx-jxQ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="93"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="ivZ-mo-qZu" secondAttribute="trailing" constant="130" id="5VZ-Ub-Vis">
+                                <variation key="heightClass=regular-widthClass=compact" constant="92"/>
+                            </constraint>
+                            <constraint firstItem="0mo-P2-M1I" firstAttribute="top" secondItem="ivZ-mo-qZu" secondAttribute="bottom" constant="300" id="BzO-gw-lDH"/>
+                            <constraint firstItem="WuM-xf-YWM" firstAttribute="top" secondItem="dwT-aK-6fI" secondAttribute="bottom" constant="34" id="ME5-iP-q82"/>
+                            <constraint firstItem="ivZ-mo-qZu" firstAttribute="leading" secondItem="2Cp-NH-Gnh" secondAttribute="leadingMargin" constant="131" id="ORt-QT-sN3">
+                                <variation key="heightClass=regular-widthClass=compact" constant="93"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="lzK-rj-Adq" secondAttribute="trailing" constant="160" id="UKF-hj-Qia">
+                                <variation key="heightClass=regular-widthClass=compact" constant="92"/>
+                            </constraint>
+                            <constraint firstItem="WuM-xf-YWM" firstAttribute="trailing" secondItem="2Cp-NH-Gnh" secondAttribute="trailingMargin" id="VYJ-ry-Kzq"/>
+                            <constraint firstItem="dwT-aK-6fI" firstAttribute="trailing" secondItem="2Cp-NH-Gnh" secondAttribute="trailingMargin" id="g04-Rm-xqq"/>
+                            <constraint firstItem="WuM-xf-YWM" firstAttribute="leading" secondItem="2Cp-NH-Gnh" secondAttribute="leadingMargin" id="iKB-2u-BSc"/>
+                            <constraint firstItem="dwT-aK-6fI" firstAttribute="leading" secondItem="2Cp-NH-Gnh" secondAttribute="leadingMargin" id="kmS-qF-WXe"/>
+                            <constraint firstItem="ivZ-mo-qZu" firstAttribute="top" secondItem="lzK-rj-Adq" secondAttribute="bottom" constant="20" id="qjs-e6-fvM"/>
+                            <constraint firstItem="lzK-rj-Adq" firstAttribute="top" secondItem="WuM-xf-YWM" secondAttribute="bottom" constant="24" id="vV0-CN-ZIU"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dwT-aK-6fI"/>
+                                <exclude reference="WuM-xf-YWM"/>
+                                <exclude reference="lzK-rj-Adq"/>
+                                <exclude reference="ivZ-mo-qZu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="g04-Rm-xqq"/>
+                                <exclude reference="kmS-qF-WXe"/>
+                                <exclude reference="ME5-iP-q82"/>
+                                <exclude reference="VYJ-ry-Kzq"/>
+                                <exclude reference="iKB-2u-BSc"/>
+                                <exclude reference="1sF-Qx-jxQ"/>
+                                <exclude reference="UKF-hj-Qia"/>
+                                <exclude reference="vV0-CN-ZIU"/>
+                                <exclude reference="5VZ-Ub-Vis"/>
+                                <exclude reference="ORt-QT-sN3"/>
+                                <exclude reference="qjs-e6-fvM"/>
+                                <exclude reference="BzO-gw-lDH"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dwT-aK-6fI"/>
+                                <include reference="WuM-xf-YWM"/>
+                                <include reference="lzK-rj-Adq"/>
+                                <include reference="ivZ-mo-qZu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="g04-Rm-xqq"/>
+                                <include reference="kmS-qF-WXe"/>
+                                <include reference="ME5-iP-q82"/>
+                                <include reference="VYJ-ry-Kzq"/>
+                                <include reference="iKB-2u-BSc"/>
+                                <include reference="1sF-Qx-jxQ"/>
+                                <include reference="UKF-hj-Qia"/>
+                                <include reference="vV0-CN-ZIU"/>
+                                <include reference="5VZ-Ub-Vis"/>
+                                <include reference="ORt-QT-sN3"/>
+                                <include reference="qjs-e6-fvM"/>
+                                <include reference="BzO-gw-lDH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rose Book Buy/Sell" id="WnF-EX-YSi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHR-U0-LPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528" y="61.5"/>
+        </scene>
+        <!--Home Page View Controller-->
+        <scene sceneID="i5e-nS-NQN">
+            <objects>
+                <viewController id="B5t-8P-scV" customClass="HomePageViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iko-rc-SfD"/>
+                        <viewControllerLayoutGuide type="bottom" id="tWc-e1-Jb8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qyS-tj-Weg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hv9-iY-gd1">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Find Books">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFT-d6-Vas">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sell a Book">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eO9-et-If4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="My Listings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnq-bT-3n7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nbc-q7-FjW" kind="showDetail" id="kwk-vq-Urj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tnq-bT-3n7" firstAttribute="leading" secondItem="qyS-tj-Weg" secondAttribute="leadingMargin" constant="41" id="7CP-WR-dRb"/>
+                            <constraint firstItem="hv9-iY-gd1" firstAttribute="leading" secondItem="qyS-tj-Weg" secondAttribute="leadingMargin" constant="161" id="8XB-ed-JkC">
+                                <variation key="heightClass=regular-widthClass=compact" constant="41"/>
+                            </constraint>
+                            <constraint firstItem="tFT-d6-Vas" firstAttribute="top" secondItem="hv9-iY-gd1" secondAttribute="bottom" constant="84" id="AgE-br-tTg"/>
+                            <constraint firstItem="tFT-d6-Vas" firstAttribute="leading" secondItem="qyS-tj-Weg" secondAttribute="leadingMargin" constant="161" id="B13-uP-bX1">
+                                <variation key="heightClass=regular-widthClass=compact" constant="41"/>
+                            </constraint>
+                            <constraint firstItem="tWc-e1-Jb8" firstAttribute="top" secondItem="eO9-et-If4" secondAttribute="bottom" constant="265" id="EuP-b8-At5"/>
+                            <constraint firstItem="eO9-et-If4" firstAttribute="leading" secondItem="qyS-tj-Weg" secondAttribute="leadingMargin" constant="161" id="XC6-l7-JHP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="41"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="hv9-iY-gd1" secondAttribute="trailing" constant="161" id="XNH-Ai-qeW">
+                                <variation key="heightClass=regular-widthClass=compact" constant="41"/>
+                            </constraint>
+                            <constraint firstItem="eO9-et-If4" firstAttribute="top" secondItem="tFT-d6-Vas" secondAttribute="bottom" constant="84" id="cD9-E8-LHn"/>
+                            <constraint firstItem="tWc-e1-Jb8" firstAttribute="top" secondItem="Tnq-bT-3n7" secondAttribute="bottom" constant="66" id="ilh-cX-lM7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Tnq-bT-3n7" secondAttribute="trailing" constant="41" id="kH0-Uc-VJn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tFT-d6-Vas" secondAttribute="trailing" constant="161" id="l1o-hA-Gud">
+                                <variation key="heightClass=regular-widthClass=compact" constant="41"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="eO9-et-If4" secondAttribute="trailing" constant="161" id="wFz-vX-j0i">
+                                <variation key="heightClass=regular-widthClass=compact" constant="41"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="hv9-iY-gd1"/>
+                                <exclude reference="tFT-d6-Vas"/>
+                                <exclude reference="eO9-et-If4"/>
+                                <exclude reference="Tnq-bT-3n7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8XB-ed-JkC"/>
+                                <exclude reference="XNH-Ai-qeW"/>
+                                <exclude reference="AgE-br-tTg"/>
+                                <exclude reference="B13-uP-bX1"/>
+                                <exclude reference="l1o-hA-Gud"/>
+                                <exclude reference="XC6-l7-JHP"/>
+                                <exclude reference="cD9-E8-LHn"/>
+                                <exclude reference="wFz-vX-j0i"/>
+                                <exclude reference="7CP-WR-dRb"/>
+                                <exclude reference="kH0-Uc-VJn"/>
+                                <exclude reference="EuP-b8-At5"/>
+                                <exclude reference="ilh-cX-lM7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="hv9-iY-gd1"/>
+                                <include reference="tFT-d6-Vas"/>
+                                <include reference="eO9-et-If4"/>
+                                <include reference="Tnq-bT-3n7"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8XB-ed-JkC"/>
+                                <include reference="XNH-Ai-qeW"/>
+                                <include reference="AgE-br-tTg"/>
+                                <include reference="B13-uP-bX1"/>
+                                <include reference="l1o-hA-Gud"/>
+                                <include reference="XC6-l7-JHP"/>
+                                <include reference="cD9-E8-LHn"/>
+                                <include reference="wFz-vX-j0i"/>
+                                <include reference="7CP-WR-dRb"/>
+                                <include reference="kH0-Uc-VJn"/>
+                                <include reference="EuP-b8-At5"/>
+                                <include reference="ilh-cX-lM7"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="enF-UY-wn4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="63.75"/>
+        </scene>
+        <!--Sell Page View Controller-->
+        <scene sceneID="kT7-Ir-llg">
+            <objects>
+                <viewController id="Os5-vO-XX2" customClass="SellPageViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GGg-qg-JAe"/>
+                        <viewControllerLayoutGuide type="bottom" id="lTe-Bv-nva"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t25-gZ-Oe7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDl-cG-WrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2103" y="84"/>
+        </scene>
+        <!--My Listings Table View Controller-->
+        <scene sceneID="NwL-vH-JyX">
+            <objects>
+                <tableViewController id="Rhc-iA-QL7" customClass="MyListingsTableViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uug-qk-vwu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5Q7-rh-rdO">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Q7-rh-rdO" id="8YC-u2-4q4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rhc-iA-QL7" id="U1B-wM-Kdt"/>
+                            <outlet property="delegate" destination="Rhc-iA-QL7" id="PeD-lT-RmW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="08q-cF-Hwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2099" y="860"/>
+        </scene>
+        <!--Offers Table View Controller-->
+        <scene sceneID="RbG-lh-gWU">
+            <objects>
+                <tableViewController id="k9a-kb-0OD" customClass="OffersTableViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YCd-Vr-Kmw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wUM-dM-eYW">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wUM-dM-eYW" id="8Qt-uy-SpM">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="k9a-kb-0OD" id="Izy-p4-ROE"/>
+                            <outlet property="delegate" destination="k9a-kb-0OD" id="VQz-6h-TL5"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZtS-VS-RxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2831" y="860"/>
+        </scene>
+        <!--Send Email Response View Controller-->
+        <scene sceneID="B9g-cX-6tG">
+            <objects>
+                <viewController id="nTV-Ou-11h" customClass="SendEmailResponseViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kOV-Ph-741"/>
+                        <viewControllerLayoutGuide type="bottom" id="fUQ-Kc-4nb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AkS-t2-chq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d41-m9-DN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3512" y="860"/>
+        </scene>
+        <!--Listings Table View Controller-->
+        <scene sceneID="9bx-wA-fyn">
+            <objects>
+                <tableViewController id="3Kf-SD-5ET" customClass="ListingsTableViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NKJ-ZX-UzK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="erm-58-rgI">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="erm-58-rgI" id="kMK-Pf-c1m">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3Kf-SD-5ET" id="5kr-NA-Hmd"/>
+                            <outlet property="delegate" destination="3Kf-SD-5ET" id="bBR-Kf-e79"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hBP-xj-WJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2103" y="-668"/>
+        </scene>
+        <!--Send Email View Controller-->
+        <scene sceneID="zif-30-vmd">
+            <objects>
+                <viewController id="mj1-wf-spP" customClass="SendEmailViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oG2-bn-Bde"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uab-rS-Po2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F4G-Ah-uFI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVA-9l-yUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2804" y="-668"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="VhM-ko-704">
+            <objects>
+                <viewController id="6Dc-WV-iV7" customClass="CreateAccountViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OOC-8w-w5q"/>
+                        <viewControllerLayoutGuide type="bottom" id="QTU-b6-XtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P8v-lh-5fW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m2k-hy-5DP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529" y="848"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kwk-vq-Urj"/>
+    </inferredMetricsTieBreakers>
+</document>
