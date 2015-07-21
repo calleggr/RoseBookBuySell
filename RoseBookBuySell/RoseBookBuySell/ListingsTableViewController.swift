@@ -9,6 +9,8 @@
 import UIKit
 
 class ListingsTableViewController: UITableViewController {
+    
+    let ShowDetailSegueIdentifier = "listingsBackToHome"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,12 +19,11 @@ class ListingsTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "goBack")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func goBack() {
+        self.performSegueWithIdentifier(ShowDetailSegueIdentifier, sender: self)
     }
 
     // MARK: - Table view data source
@@ -84,14 +85,17 @@ class ListingsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == ShowDetailSegueIdentifier{
+            
+        }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
