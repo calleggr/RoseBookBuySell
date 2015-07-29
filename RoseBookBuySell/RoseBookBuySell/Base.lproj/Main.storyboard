@@ -324,6 +324,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="B5t-8P-scV" kind="showDetail" id="H2X-bO-ydi"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uDY-dy-lGE">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -402,6 +405,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="ant-y0-jbK" secondAttribute="trailing" id="php-6O-xNb"/>
+                            <constraint firstItem="1gX-ov-5d8" firstAttribute="top" secondItem="GGg-qg-JAe" secondAttribute="bottom" constant="44" id="t4A-v7-uek"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1gX-ov-5d8" secondAttribute="trailing" constant="106" id="uAS-pr-Uwn">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
@@ -430,6 +434,7 @@
                             <mask key="constraints">
                                 <exclude reference="AXe-d5-Nvq"/>
                                 <exclude reference="JCO-dV-TYi"/>
+                                <exclude reference="t4A-v7-uek"/>
                                 <exclude reference="uAS-pr-Uwn"/>
                                 <exclude reference="xRB-Pt-ffU"/>
                                 <exclude reference="D4s-6n-c0a"/>
@@ -465,9 +470,11 @@
                             <mask key="constraints">
                                 <include reference="AXe-d5-Nvq"/>
                                 <include reference="JCO-dV-TYi"/>
+                                <include reference="t4A-v7-uek"/>
                                 <include reference="uAS-pr-Uwn"/>
                                 <include reference="xRB-Pt-ffU"/>
                                 <include reference="D4s-6n-c0a"/>
+                                <exclude reference="Rgy-EJ-ccG"/>
                                 <include reference="ZX9-ke-1ra"/>
                                 <include reference="gJc-uG-aGa"/>
                                 <include reference="Dx4-4h-F7j"/>
@@ -519,10 +526,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="SE2-pd-Mrk"/>
+                    <connections>
+                        <segue destination="B5t-8P-scV" kind="showDetail" identifier="MyListingsBackToHome" id="WU5-7b-FtB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08q-cF-Hwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3016.5" y="859.5"/>
+            <point key="canvasLocation" x="2971.5" y="859.5"/>
         </scene>
         <!--Offers Table View Controller-->
         <scene sceneID="RbG-lh-gWU">
@@ -548,6 +558,9 @@
                             <outlet property="delegate" destination="k9a-kb-0OD" id="VQz-6h-TL5"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Rhc-iA-QL7" kind="showDetail" identifier="OffersBackToMyListings" id="BFf-E1-oU8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZtS-VS-RxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -596,6 +609,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="FtW-If-Ir4"/>
+                    <connections>
+                        <segue destination="B5t-8P-scV" kind="showDetail" identifier="listingsBackToHome" id="a9u-Nc-9X1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBP-xj-WJS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -638,6 +654,9 @@ textView.layer.borderWidth=1</string>
                                 <state key="normal" title="Send Email">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="3Kf-SD-5ET" kind="showDetail" id="Agl-yA-LJi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -876,6 +895,7 @@ textView.layer.borderWidth=1</string>
         <!--Navigation Controller-->
         <scene sceneID="MCe-UD-7ce">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sRL-j9-S7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fkK-Ac-xZ5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BXd-Fo-Eh5">
@@ -887,7 +907,6 @@ textView.layer.borderWidth=1</string>
                         <segue destination="3Kf-SD-5ET" kind="relationship" relationship="rootViewController" id="XYV-8v-Wjw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sRL-j9-S7J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2103" y="-668.25"/>
         </scene>
