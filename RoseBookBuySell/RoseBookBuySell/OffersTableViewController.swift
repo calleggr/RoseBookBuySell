@@ -22,6 +22,28 @@ class OffersTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "goBack")
 
     }
+    
+    
+    var demo : [String] = []
+    
+    override func viewWillAppear(animated: Bool) {
+        //API HERE to generate the list
+        demo=["Row 1", "Cool row 2", "WHEEEEE"]
+        
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("OffersCell", forIndexPath: indexPath) as! UITableViewCell
+        
+        // Configure the cell...
+        let info = demo[indexPath.row]
+        cell.textLabel?.text = info
+        cell.detailTextLabel?.text = "\(info) detail"
+        
+        
+        return cell
+    }
+
 
     func goBack() {
         self.performSegueWithIdentifier(ShowDetailSegueIdentifier, sender: self)
@@ -31,13 +53,13 @@ class OffersTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return demo.count
     }
 
     /*

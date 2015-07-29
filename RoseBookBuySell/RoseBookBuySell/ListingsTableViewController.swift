@@ -11,7 +11,15 @@ import UIKit
 class ListingsTableViewController: UITableViewController {
     
     let ShowDetailSegueIdentifier = "listingsBackToHome"
-
+    
+    var demo : [String] = []
+    
+    override func viewWillAppear(animated: Bool) {
+        //API HERE to generate the list
+        demo=["Row 1", "Cool row 2", "WHEEEEE"]
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +29,8 @@ class ListingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "goBack")
     }
+    
+    
 
     func goBack() {
         self.performSegueWithIdentifier(ShowDetailSegueIdentifier, sender: self)
@@ -31,24 +41,28 @@ class ListingsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return demo.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
+        let info = demo[indexPath.row]
+        cell.textLabel?.text = info
+        cell.detailTextLabel?.text = "\(info) detail"
+    
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
