@@ -16,20 +16,20 @@
 #
 import os
 from google.appengine.ext import ndb
-import jinja2
 import webapp2
+import models
 
-#user
-USER_KEY = ndb.key('Entity', 'user_root')
-#listing
-LISTING_KEY = ndb.key('Entity', 'listing_root')
-#offer
-OFFER_KEY = ndb.key('Entity', 'offer_root')
-#book
-BOOK_KEY = ndb.key('Entity', 'book_root')
+# #user
+USER_KEY = ndb.key("Entity", "user_root")
+# #listing
+# LISTING_KEY = ndb.key('Entity', 'listing_root')
+# #offer
+# OFFER_KEY = ndb.key('Entity', 'offer_root')
+# #book
+# BOOK_KEY = ndb.key('Entity', 'book_root')
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        self.response.write('This is the API for the RoseBookBuySell App')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

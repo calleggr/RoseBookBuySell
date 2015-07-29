@@ -27,7 +27,7 @@ class Offer(EndpointsModel):
 
 class Book(EndpointsModel):
     """book model"""
-    _message_fields_schema = ("entityKey", "name", "course", "listing_id")
+    _message_fields_schema = ("entityKey", "name", "course_number", "department", "listing_id")
     name = ndb.StringProperty()
     course_number = ndb.IntegerProperty()
     department = ndb.StringProperty()
