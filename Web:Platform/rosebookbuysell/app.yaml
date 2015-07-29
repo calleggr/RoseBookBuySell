@@ -12,6 +12,7 @@ handlers:
 - url: .*
   script: main.app
 
+#Endpoints handler
 - url: /_ah/spi/.*
   script: rose_book_buy_sell_api.app
 
