@@ -336,16 +336,25 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Os5-vO-XX2" id="a30-mV-mQl"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ant-y0-jbK">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Os5-vO-XX2" id="ikn-Ne-MsU"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bPg-hE-ADP">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Os5-vO-XX2" id="b6f-p2-9QJ"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gm-Vy-5MW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -819,6 +828,9 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6Dc-WV-iV7" id="0PD-Y3-IRa"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3e-PN-K8b">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -842,11 +854,17 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6Dc-WV-iV7" id="afE-d4-gz9"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IHT-z4-MdY">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6Dc-WV-iV7" id="dNK-62-vsa"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Z-Dp-CLe">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -858,6 +876,9 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6Dc-WV-iV7" id="uMc-5r-8iF"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -866,13 +887,13 @@
                             <constraint firstItem="x3e-PN-K8b" firstAttribute="leading" secondItem="P8v-lh-5fW" secondAttribute="leadingMargin" id="2HA-R8-s4A"/>
                             <constraint firstItem="fb7-AD-Z4F" firstAttribute="leading" secondItem="P8v-lh-5fW" secondAttribute="leadingMargin" id="3j5-bP-hXG"/>
                             <constraint firstItem="fb7-AD-Z4F" firstAttribute="top" secondItem="IHT-z4-MdY" secondAttribute="bottom" constant="48" id="8d9-WS-gCh">
-                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="QTU-b6-XtV" firstAttribute="top" secondItem="PIY-VS-GWt" secondAttribute="bottom" constant="20" id="9NQ-7u-43L"/>
                             <constraint firstItem="5nb-Xx-AlU" firstAttribute="leading" secondItem="P8v-lh-5fW" secondAttribute="leadingMargin" id="Da1-uM-QaR"/>
                             <constraint firstItem="IHT-z4-MdY" firstAttribute="trailing" secondItem="P8v-lh-5fW" secondAttribute="trailingMargin" id="LFO-Ms-NPe"/>
                             <constraint firstItem="gcm-p2-8lU" firstAttribute="top" secondItem="fb7-AD-Z4F" secondAttribute="bottom" constant="48" id="MMi-JN-9lU">
-                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="PIY-VS-GWt" secondAttribute="trailing" constant="8" id="Xqv-eP-KPR"/>
                             <constraint firstItem="IHT-z4-MdY" firstAttribute="leading" secondItem="P8v-lh-5fW" secondAttribute="leadingMargin" id="d0b-S2-xda"/>
@@ -887,7 +908,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="5nb-Xx-AlU" firstAttribute="top" secondItem="gcm-p2-8lU" secondAttribute="bottom" constant="48" id="sT6-4p-pIG">
-                                <variation key="heightClass=regular-widthClass=compact" constant="34"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstAttribute="centerY" secondItem="fb7-AD-Z4F" secondAttribute="centerY" constant="7" id="uAB-pE-U0S">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -1009,8 +1030,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BFf-E1-oU8"/>
-        <segue reference="a9u-Nc-9X1"/>
-        <segue reference="Agl-yA-LJi"/>
+        <segue reference="SqF-yz-pGk"/>
         <segue reference="5SE-9o-Oxo"/>
+        <segue reference="Agl-yA-LJi"/>
     </inferredMetricsTieBreakers>
 </document>
