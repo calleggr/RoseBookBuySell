@@ -10,15 +10,49 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
 
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var password: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
+        view.addGestureRecognizer(tap)
     }
+    
+    func dismiss(){
+        view.endEditing(true)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "SignInSegue" {
+            //ADD API CALL TO LOG IN HERE
+            if (username.text != "test" || password.text != "test") {
+                
+                let alert = UIAlertView()
+                alert.title = "Error Signing In"
+                alert.message = "Username or password was incorrect"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+                
+                return false
+            }
+                
+            else {
+                return true
+            }
+        }
+        
+        // by default, transition
+        return true
     }
     
 

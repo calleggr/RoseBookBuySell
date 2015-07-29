@@ -181,6 +181,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Rose Book Buy/Sell" id="WnF-EX-YSi"/>
+                    <connections>
+                        <outlet property="password" destination="WuM-xf-YWM" id="N9H-EQ-dyW"/>
+                        <outlet property="username" destination="dwT-aK-6fI" id="oeK-yE-5ZT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZHR-U0-LPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -886,6 +890,12 @@ textView.layer.borderWidth=1</string>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="5nb-Xx-AlU" id="Eb2-vB-9g1"/>
+                        <outlet property="email" destination="fb7-AD-Z4F" id="K4s-gV-MlF"/>
+                        <outlet property="password" destination="gcm-p2-8lU" id="Xl8-dM-2z4"/>
+                        <outlet property="username" destination="IHT-z4-MdY" id="YDW-eW-jld"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2k-hy-5DP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -929,9 +939,9 @@ textView.layer.borderWidth=1</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SqF-yz-pGk"/>
-        <segue reference="kwk-vq-Urj"/>
-        <segue reference="XYV-8v-Wjw"/>
         <segue reference="BFf-E1-oU8"/>
+        <segue reference="SqF-yz-pGk"/>
+        <segue reference="5SE-9o-Oxo"/>
+        <segue reference="XYV-8v-Wjw"/>
     </inferredMetricsTieBreakers>
 </document>

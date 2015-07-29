@@ -9,16 +9,69 @@
 import UIKit
 
 class CreateAccountViewController: UIViewController {
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var confirmPassword: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
+        view.addGestureRecognizer(tap)
     }
-
+    
+    func dismiss(){
+        view.endEditing(true)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "CreateAccountDoneSegue" {
+            //ADD API CALL HERE
+            if (username.text != "test" || email.text != "test" || confirmPassword.text != "test" || password.text != "test") {
+                
+                let alert = UIAlertView()
+                alert.title = "Error Signing Creating Account"
+                alert.message = "Check data entered and try again."
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+                
+                return false
+            }
+                
+            else {
+                return true
+            }
+        }
+        
+        // by default, transition
+        return true
+    }
+    
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        animateViewMoving(true, moveValue: 100)
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        animateViewMoving(false, moveValue: 100)
+    }
+    
+    func animateViewMoving (up:Bool, moveValue :CGFloat){
+        var movementDuration:NSTimeInterval = 0.3
+        var movement:CGFloat = ( up ? -moveValue : moveValue)
+        UIView.beginAnimations( "animateView", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration )
+        self.view.frame = CGRectOffset(self.view.frame, 0,  movement)
+        UIView.commitAnimations()
     }
     
 
