@@ -10,11 +10,36 @@ import UIKit
 
 class SellPageViewController: UIViewController {
 
+    @IBOutlet weak var price: UITextField!
+    @IBOutlet weak var courseNumber: UITextField!
+    @IBOutlet weak var bookTitle: UITextField!
+
+    @IBAction func listBookPressed(sender: AnyObject) {
+        //API CALL IN HERE, CREATION TIME
+        if (price.text != "test" || courseNumber.text != "test" || bookTitle.text != "test") {
+            
+            let alert = UIAlertView()
+            alert.title = "Error Listing Book"
+            alert.message = "Check data entered and try again."
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+            
+        }
+            
+       
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
+        view.addGestureRecognizer(tap)
     }
+    
+    func dismiss(){
+        view.endEditing(true)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

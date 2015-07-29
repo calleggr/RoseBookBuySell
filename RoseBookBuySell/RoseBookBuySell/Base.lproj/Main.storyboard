@@ -337,7 +337,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Os5-vO-XX2" id="a30-mV-mQl"/>
+                                    <outlet property="delegate" destination="Os5-vO-XX2" id="1ie-5b-pxH"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ant-y0-jbK">
@@ -362,6 +362,9 @@
                                 <state key="normal" title="List Book!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="listBookPressed:" destination="Os5-vO-XX2" eventType="touchUpInside" id="eIr-jE-NhY"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="List a book to sell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gX-ov-5d8">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -508,6 +511,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="bookTitle" destination="uDY-dy-lGE" id="6vq-gQ-jbT"/>
+                        <outlet property="courseNumber" destination="ant-y0-jbK" id="Y6Y-7r-18M"/>
+                        <outlet property="price" destination="bPg-hE-ADP" id="iFT-De-J7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDl-cG-WrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1030,8 +1038,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="BFf-E1-oU8"/>
-        <segue reference="SqF-yz-pGk"/>
-        <segue reference="5SE-9o-Oxo"/>
+        <segue reference="H2X-bO-ydi"/>
         <segue reference="Agl-yA-LJi"/>
+        <segue reference="5SE-9o-Oxo"/>
     </inferredMetricsTieBreakers>
 </document>
