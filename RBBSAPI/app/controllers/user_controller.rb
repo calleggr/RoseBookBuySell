@@ -1,6 +1,6 @@
 class UserController < ApplicationController
-	#CRU no D because deleting a user is not needed
-
+	#CR no UD because we dont have those features in our app
+  
 	def create
     temp = User.where("email = ? or username = ?", params[:user][:email], params[:user][:username]).first
     if temp
@@ -42,10 +42,5 @@ class UserController < ApplicationController
       render :json => "user not found".to_json
     end
   end
-
-
-	def update
-
-	end
 
 end
