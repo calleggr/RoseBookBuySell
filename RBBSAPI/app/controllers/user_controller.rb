@@ -8,7 +8,7 @@ class UserController < ApplicationController
     else
       @user = User.new(params[:user])
       if @user.save
-        render :json => @user.to_json
+        render :json => @user.as_json(only: [:username, :id, :email])
       else
         render :json => 'save failed'.to_json
       end
@@ -19,7 +19,7 @@ class UserController < ApplicationController
 	def find_id
     @user = User.find(params[:id])
     if @user
-      render :json => @user.to_json
+      render :json => @user.as_json(only: [:username, :id, :email])
     else
       render :json => "user not found".to_json
     end
@@ -28,7 +28,7 @@ class UserController < ApplicationController
   def find_email
     @user = User.where("email = ?", params[:email]).first
     if @user
-      render :json => @user.to_json
+      render :json => @user.as_json(only: [:username, :id, :email])
     else
       render :json => "user not found".to_json
     end
@@ -37,9 +37,18 @@ class UserController < ApplicationController
   def find_username
     @user = User.where("username = ?", params[:username]).first
     if @user
-      render :json => @user.to_json
+      render :json => @user.as_json(only: [:username, :id, :email])
     else
       render :json => "user not found".to_json
+    end
+  end
+
+  def login
+    @user = User.where("username = ? and password = ?", params[:username], params[:password]).first
+    if @user
+      render :json => @user.as_json(only: [:username, :id, :email])
+    else
+      render :json => 'invalid username/password'.to_json
     end
   end
 
