@@ -1,6 +1,6 @@
 class UserController < ApplicationController
 	#CR no UD because we dont have those features in our app
-  
+
 	def create
     temp = User.where("email = ? or username = ?", params[:user][:email], params[:user][:username]).first
     if temp
@@ -10,7 +10,7 @@ class UserController < ApplicationController
       if @user.save
         render :json => @user.to_json
       else
-        redner :json => 'save failed'.to_json
+        render :json => 'save failed'.to_json
       end
     end
 	end
