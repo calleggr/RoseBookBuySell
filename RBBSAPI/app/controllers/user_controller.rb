@@ -1,7 +1,7 @@
 class UserController < ApplicationController
-	#CR no UD because we dont have those features in our app
+  #CR no UD because we dont have those features in our app
 
-	def create
+  def create
     temp = User.where("email = ? or username = ?", params[:user][:email], params[:user][:username]).first
     if temp
       render :json => 'a user with that email or username already exists'.to_json
@@ -13,17 +13,17 @@ class UserController < ApplicationController
         render :json => 'save failed'.to_json
       end
     end
-	end
+  end
 
 
-	def find_id
+  def find_id
     @user = User.find(params[:id])
     if @user
       render :json => @user.as_json(only: [:username, :id, :email])
     else
       render :json => "user not found".to_json
     end
-	end
+  end
 
   def find_email
     @user = User.where("email = ?", params[:email]).first

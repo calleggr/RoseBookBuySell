@@ -37,3 +37,4 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'test-unit'
+gem 'attr_encrypted'
