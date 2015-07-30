@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import os
+#import os
 from google.appengine.ext import ndb
 import webapp2
-import models
+#import models
 
 # #user
 USER_KEY = ndb.key("Entity", "user_root")
