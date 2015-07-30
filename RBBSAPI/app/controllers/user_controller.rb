@@ -17,8 +17,8 @@ class UserController < ApplicationController
 
 
   def find_id
-    @user = User.find(params[:id])
-    if @user
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
       render :json => @user.as_json(only: [:username, :id, :email])
     else
       render :json => "user not found".to_json
