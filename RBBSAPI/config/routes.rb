@@ -10,5 +10,7 @@ RBBSAPI::Application.routes.draw do
   get '/listing/find_user_id/:user_id' => 'listing#find_user_id'
   get '/listing/find_all/' => 'listing#find_all'
   post '/listing/update/' => 'listing#update'
+
+  post '/offer/create' => 'offer#create'
   
 end

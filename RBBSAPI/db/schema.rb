@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(:version => 20150803154553) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "offers", ["listing_id"], :name => "index_offers_on_listing_id"
+  add_index "offers", ["user_id"], :name => "index_offers_on_user_id"
+
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "encrypted_password"

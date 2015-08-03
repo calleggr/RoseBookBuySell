@@ -3,8 +3,7 @@ class ListingController < ApplicationController
 
   #create a listing with a book
   def create
-    user = User.find(params[:listing][:user_id])
-    if !user
+    if !User.exists?(params[:listing][:user_id])
       render :json => 'user not found'.to_json
     else
       @listing = Listing.new(params[:listing])

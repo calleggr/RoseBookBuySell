@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Your listing has recieved an offer!</h1>
+    <p>
+    	Your listing for book: <%= @offer.listing.book.title %> has recieved an offer
+    	for: $<%= @offer.price %>
+    <br>
+    </p>
+    <p>To view or respond to this offer please go to the my listings section of the app.</p>
+  </body>
+</html>

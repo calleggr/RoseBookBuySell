@@ -1,7 +1,7 @@
 class Offer < ActiveRecord::Base
 
 	belongs_to :user, :class_name => 'User'
-	has_one :listing, :foreign_key => 'listing_id'
+	belongs_to :listing, :class_name => 'Listing'
 
 	attr_accessible :user_id, :listing_id, :price, :updated_at
 
