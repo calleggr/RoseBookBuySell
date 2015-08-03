@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
 	has_many :listings, :foreign_key => 'user_id'
+	has_many :offers, :foreign_key => 'user_id'
 
   attr_encrypted :password, :key => 'RBBS'
 

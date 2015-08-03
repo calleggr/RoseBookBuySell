@@ -38,3 +38,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 gem 'test-unit'
 gem 'attr_encrypted'
+gem "mail", "2.5.4"

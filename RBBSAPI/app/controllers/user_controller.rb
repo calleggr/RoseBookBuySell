@@ -8,6 +8,7 @@ class UserController < ApplicationController
     else
       @user = User.new(params[:user])
       if @user.save
+      	UserMailer.welcome_email(@user).deliver
         render :json => @user.as_json(only: [:username, :id, :email])
       else
         render :json => 'save failed'.to_json
