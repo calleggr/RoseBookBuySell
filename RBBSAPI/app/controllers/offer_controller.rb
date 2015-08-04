@@ -14,4 +14,27 @@ class OfferController < ApplicationController
     end
 	end
 
+  #find specific offer
+  def find_id
+    if Offer.exists?(params[:id])
+      @offer = Offer.find(params[:id])
+      render :json => @offer.as_json(include: :listing)
+    else
+      render :json => "offer not found".to_json
+  end
+
+  #find all offers for a given user
+  def find_user_id
+    @offers = Offer.where("user_id = ?",params[:user_id]).all
+    if !@offers.empty?
+      ret = []
+      @offers.each do |offer|
+        ret << offer.as_json(include: :listing)
+      end
+      render :json => ret
+    else
+      render :json => "user has no offers".to_json
+    end
+  end
+
 end
