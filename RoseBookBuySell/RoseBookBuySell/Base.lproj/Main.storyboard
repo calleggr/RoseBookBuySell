@@ -644,7 +644,7 @@
             </objects>
             <point key="canvasLocation" x="4429.5" y="859.5"/>
         </scene>
-        <!--Listings Table View Controller-->
+        <!--Listings-->
         <scene sceneID="9bx-wA-fyn">
             <objects>
                 <tableViewController id="3Kf-SD-5ET" customClass="ListingsTableViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
@@ -688,7 +688,9 @@
                             <outlet property="delegate" destination="3Kf-SD-5ET" id="bBR-Kf-e79"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FtW-If-Ir4"/>
+                    <navigationItem key="navigationItem" title="Listings" id="FtW-If-Ir4">
+                        <barButtonItem key="backBarButtonItem" title=" &lt; " id="TGc-CY-005"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="B5t-8P-scV" kind="showDetail" identifier="listingsBackToHome" id="a9u-Nc-9X1"/>
                     </connections>
@@ -736,7 +738,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3Kf-SD-5ET" kind="showDetail" id="Agl-yA-LJi"/>
+                                    <segue destination="fkK-Ac-xZ5" kind="show" identifier="backToListings" id="qXp-1u-zrS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1037,9 +1039,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="a9u-Nc-9X1"/>
+        <segue reference="qXp-1u-zrS"/>
+        <segue reference="kwk-vq-Urj"/>
         <segue reference="BFf-E1-oU8"/>
-        <segue reference="H2X-bO-ydi"/>
-        <segue reference="Agl-yA-LJi"/>
-        <segue reference="5SE-9o-Oxo"/>
     </inferredMetricsTieBreakers>
 </document>

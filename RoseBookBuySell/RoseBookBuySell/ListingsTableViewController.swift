@@ -17,6 +17,7 @@ class ListingsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         //API HERE to generate the list
         demo=["Row 1", "Cool row 2", "WHEEEEE"]
+        self.tableView.reloadData()
         
     }
     
