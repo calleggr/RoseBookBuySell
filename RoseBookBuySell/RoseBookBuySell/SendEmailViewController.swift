@@ -13,7 +13,12 @@ class SendEmailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismiss(){
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
