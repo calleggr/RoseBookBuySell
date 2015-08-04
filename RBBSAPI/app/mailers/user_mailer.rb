@@ -12,5 +12,11 @@ class UserMailer < ActionMailer::Base
   	mail(to: @user.email, subject: 'Your Listing Recieved an Offer!')
   end
 
+  def respond_to_offer(offer, email)
+    @offer = offer
+    @email = email
+    mail(to: @offer.user.email, subject: 'You Have')
+  end
+
 
 end

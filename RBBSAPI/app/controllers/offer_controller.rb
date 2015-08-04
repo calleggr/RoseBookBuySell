@@ -37,4 +37,15 @@ class OfferController < ApplicationController
     end
   end
 
+  def respond_to_offer
+    if Offer.exists?(params[:id])
+      @offer = Offer.find(params[:id])
+      @email = params[:body]
+      UserMailer.respond_to_offer(@offer, @email)
+      render :json => "email sent".to_json
+    else
+      render :json => "offer not found".to_json
+    end
+  end
+
 end
