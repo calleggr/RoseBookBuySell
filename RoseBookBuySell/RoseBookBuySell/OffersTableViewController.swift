@@ -10,7 +10,7 @@ import UIKit
 
 class OffersTableViewController: UITableViewController {
     
-    let ShowDetailSegueIdentifier = "OffersBackToMyListings"
+    let ShowDetailSegueIdentifier = "OffersBackToListings"
 
     override func viewDidLoad() {
         super.viewDidLoad()

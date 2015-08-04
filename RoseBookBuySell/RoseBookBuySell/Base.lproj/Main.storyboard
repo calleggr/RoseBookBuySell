@@ -556,7 +556,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="k9a-kb-0OD" kind="showDetail" id="MB2-Sa-4Fm"/>
+                                    <segue destination="k9a-kb-0OD" kind="show" id="MB2-Sa-4Fm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -609,7 +609,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="nTV-Ou-11h" kind="showDetail" id="5ka-tD-O8n"/>
+                                    <segue destination="nTV-Ou-11h" kind="showDetail" id="eRE-HV-Dis"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -619,7 +619,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="Rhc-iA-QL7" kind="showDetail" identifier="OffersBackToMyListings" id="BFf-E1-oU8"/>
+                        <segue destination="SPC-e2-LSk" kind="show" identifier="OffersBackToListings" id="Dfd-u3-E35"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZtS-VS-RxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1145,8 +1145,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="WU5-7b-FtB"/>
-        <segue reference="BFf-E1-oU8"/>
-        <segue reference="okD-Xh-bc1"/>
+        <segue reference="Dfd-u3-E35"/>
         <segue reference="kwk-vq-Urj"/>
         <segue reference="qXp-1u-zrS"/>
     </inferredMetricsTieBreakers>
