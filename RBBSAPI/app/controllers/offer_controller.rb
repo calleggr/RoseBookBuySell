@@ -21,6 +21,7 @@ class OfferController < ApplicationController
       render :json => @offer.as_json(include: :listing)
     else
       render :json => "offer not found".to_json
+    end
   end
 
   #find all offers for a given user
@@ -41,7 +42,7 @@ class OfferController < ApplicationController
     if Offer.exists?(params[:id])
       @offer = Offer.find(params[:id])
       @email = params[:body]
-      UserMailer.respond_to_offer(@offer, @email)
+      UserMailer.respond_to_offer(@offer, @email).deliver
       render :json => "email sent".to_json
     else
       render :json => "offer not found".to_json
