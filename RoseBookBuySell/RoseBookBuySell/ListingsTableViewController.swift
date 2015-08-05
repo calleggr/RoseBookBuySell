@@ -11,15 +11,11 @@ import UIKit
 class ListingsTableViewController: UITableViewController {
     
     let ShowDetailSegueIdentifier = "listingsBackToHome"
-    
-    var demo : [String] = []
-    
-    override func viewWillAppear(animated: Bool) {
-        //API HERE to generate the list
-        demo=["Row 1", "Cool row 2", "WHEEEEE"]
-        self.tableView.reloadData()
-        
-    }
+    let listCell = "ListingCell"
+    var demoCourse : [String] = []
+    var demoBook : [String] = []
+    var demoPrice : [String] = []
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,19 +44,30 @@ class ListingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return demo.count
+        return demoBook.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) as! UITableViewCell
 
-        // Configure the cell...
-        let info = demo[indexPath.row]
-        cell.textLabel?.text = info
-        cell.detailTextLabel?.text = "\(info) detail"
+    override func viewWillAppear(animated: Bool) {
+        //API HERE to generate the list
+        demoCourse=["CSSE 220", "MA 374", "CSSE 484"]
+        demoBook=["Big Javaaaaaaabbbb", "Math", "iOS Dev"]
+        demoPrice=["$230", "$100", "$998"]
+        
+    }
     
-
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(listCell, forIndexPath: indexPath) as! ListingTableViewCell
+        
+        // Configure the cell...
+        
+        cell.bookLabel.text = demoBook[indexPath.row]
+        cell.courseLabel.text = demoCourse[indexPath.row]
+        cell.priceLabel.text = demoPrice[indexPath.row]
+        cell.bookLabel.preferredMaxLayoutWidth = CGRectGetWidth(cell.bookLabel.superview!.frame)/3
+        
+        
         return cell
     }
     

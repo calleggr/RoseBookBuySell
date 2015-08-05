@@ -11,6 +11,7 @@ import UIKit
 class MyListingsTableViewController: UITableViewController {
     
     let ShowDetailSegueIdentifier = "MyListingsBackToHome"
+    let listCell = "MyListCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,21 +23,24 @@ class MyListingsTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "goBack")
     }
     
-    var demo : [String] = []
-    
+    var demoCourse : [String] = []
+    var demoBook : [String] = []
+    var demoPrice : [String] = []
     override func viewWillAppear(animated: Bool) {
         //API HERE to generate the list
-        demo=["Row 1", "Cool row 2", "WHEEEEE"]
+
+        demoBook=["Big Java", "Math", "iOS Dev"]
+        demoPrice=["$230", "$100", "$998"]
         
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MyListCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(listCell, forIndexPath: indexPath) as! MyListingsTableViewCell
         
         // Configure the cell...
-        let info = demo[indexPath.row]
-        cell.textLabel?.text = info
-        cell.detailTextLabel?.text = "\(info) detail"
+   
+        cell.bookLabel.text = demoBook[indexPath.row]
+        cell.priceLabel.text = demoPrice[indexPath.row]
         
         
         return cell
@@ -57,7 +61,7 @@ class MyListingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return demo.count
+        return demoBook.count
     }
 
     /*

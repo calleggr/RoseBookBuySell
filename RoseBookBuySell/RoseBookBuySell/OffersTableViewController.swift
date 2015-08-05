@@ -11,6 +11,7 @@ import UIKit
 class OffersTableViewController: UITableViewController {
     
     let ShowDetailSegueIdentifier = "OffersBackToListings"
+    let listCell = "OffersCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +25,23 @@ class OffersTableViewController: UITableViewController {
     }
     
     
-    var demo : [String] = []
+    var demoName : [String] = []
+    var demoPrice : [String] = []
     
     override func viewWillAppear(animated: Bool) {
         //API HERE to generate the list
-        demo=["Row 1", "Cool row 2", "WHEEEEE"]
+        demoName=["Bill Cosby", "Spiderman", "Bob"]
+        demoPrice=["$10", "$100", "$24"]
         
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OffersCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(listCell, forIndexPath: indexPath) as! OffersTableViewCell
         
         // Configure the cell...
-        let info = demo[indexPath.row]
-        cell.textLabel?.text = info
-        cell.detailTextLabel?.text = "\(info) detail"
+  
+        cell.nameLabel.text = demoName[indexPath.row]
+        cell.offerLabel.text = demoPrice[indexPath.row]
         
         
         return cell
@@ -59,7 +62,7 @@ class OffersTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return demo.count
+        return demoName.count
     }
 
     /*
