@@ -21,7 +21,6 @@ class OffersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "goBack")
-
     }
     
     
@@ -32,6 +31,7 @@ class OffersTableViewController: UITableViewController {
         //API HERE to generate the list
         demoName=["Bill Cosby", "Spiderman", "Bob"]
         demoPrice=["$10", "$100", "$24"]
+        self.navigationItem.title = "Offers for <book>"
         
     }
     

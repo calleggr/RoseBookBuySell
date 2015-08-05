@@ -31,7 +31,7 @@ class MyListingsTableViewController: UITableViewController {
 
         demoBook=["Big Java", "Math", "iOS Dev"]
         demoPrice=["$230", "$100", "$998"]
-        
+        self.navigationItem.title = "My Listings"
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
