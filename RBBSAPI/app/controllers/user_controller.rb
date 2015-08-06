@@ -45,11 +45,15 @@ class UserController < ApplicationController
   end
 
   def login
-    @user = User.where("username = ? and password = ?", params[:username], params[:password]).first
+    @user = User.where("username = ?", params[:username]).first
     if @user
-      render :json => @user.as_json(only: [:username, :id, :email])
+      if @user.password.eql? params[:password]
+        render :json => @user.as_json(only: [:username, :id, :email])
+      else
+        render :json => 'invalid username or password'.to_json
+      end
     else
-      render :json => 'invalid username/password'.to_json
+      render :json => 'invalid username or password'.to_json
     end
   end
 

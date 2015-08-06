@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+
 
 class LoginPageViewController: UIViewController {
 
@@ -33,9 +37,29 @@ class LoginPageViewController: UIViewController {
 
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        var loginToken = true
         if identifier == "SignInSegue" {
             //ADD API CALL TO LOG IN HERE
-            if (username.text != "test" || password.text != "test") {
+            Alamofire.request(.POST, "http://localhost:3000/user/login", parameters: ["username":username.text, "password":password.text]).responseJSON { (req, res, json, error) in
+                if(error != nil) {
+                    NSLog("Error: \(error)")
+                    println(req)
+                    println(res)
+                }
+                else {
+                    NSLog("Success")
+                    var json = JSON(json!)
+                    println(json)
+                    if let string = json.rawString(){
+                        if (string == "invalid username or password"){
+                            loginToken = false
+                        } else {
+                            loginToken = true
+                        }
+                    }
+                }
+            }
+            if !loginToken{
                 
                 let alert = UIAlertView()
                 alert.title = "Error Signing In"
@@ -45,7 +69,6 @@ class LoginPageViewController: UIViewController {
                 
                 return false
             }
-                
             else {
                 return true
             }
