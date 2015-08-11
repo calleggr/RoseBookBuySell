@@ -22,6 +22,9 @@ class HomePageViewController: UIViewController {
     }
     
 
+    @IBAction func pressedSignOut(sender: AnyObject) {
+        currentUser = nil
+    }
     /*
     // MARK: - Navigation
 

@@ -264,6 +264,7 @@
                                     <rect key="frame" x="16" y="540" width="568" height="30"/>
                                 </variation>
                                 <connections>
+                                    <action selector="pressedSignOut:" destination="B5t-8P-scV" eventType="touchUpInside" id="MeK-L1-8LF"/>
                                     <segue destination="Nbc-q7-FjW" kind="showDetail" id="kwk-vq-Urj"/>
                                 </connections>
                             </button>
@@ -1144,7 +1145,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="B5t-8P-scV" kind="showDetail" identifier="CreateAccountDoneSegue" id="SqF-yz-pGk"/>
+                                    <action selector="pressedDoneButton:" destination="6Dc-WV-iV7" eventType="touchUpInside" id="Bq6-EB-upz"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5nb-Xx-AlU">
@@ -1282,6 +1283,7 @@
                         <outlet property="email" destination="fb7-AD-Z4F" id="K4s-gV-MlF"/>
                         <outlet property="password" destination="gcm-p2-8lU" id="Xl8-dM-2z4"/>
                         <outlet property="username" destination="IHT-z4-MdY" id="YDW-eW-jld"/>
+                        <segue destination="B5t-8P-scV" kind="showDetail" identifier="CreateAccountDoneSegue" id="eoE-Rz-qib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2k-hy-5DP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1326,9 +1328,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dfd-u3-E35"/>
-        <segue reference="fZz-OS-coG"/>
+        <segue reference="N3i-ZV-UHz"/>
+        <segue reference="eoE-Rz-qib"/>
         <segue reference="kwk-vq-Urj"/>
-        <segue reference="qXp-1u-zrS"/>
+        <segue reference="wXT-9v-TF1"/>
     </inferredMetricsTieBreakers>
 </document>

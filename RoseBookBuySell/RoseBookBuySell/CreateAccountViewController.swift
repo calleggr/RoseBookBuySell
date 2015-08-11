@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class CreateAccountViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
@@ -19,6 +21,8 @@ class CreateAccountViewController: UIViewController {
         
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
         view.addGestureRecognizer(tap)
+        password.secureTextEntry = true
+        confirmPassword.secureTextEntry = true
     }
     
     func dismiss(){
@@ -32,6 +36,28 @@ class CreateAccountViewController: UIViewController {
     }
     
     
+    @IBAction func pressedDoneButton(sender: AnyObject) {
+        _handleCreateAccount(username.text, password: password.text, email: email.text, callback: { (user : User?) -> Void in
+            if (user != nil){
+                if (user!.username == "a user with that email or username already exists") {
+                    let alert = UIAlertView()
+                    alert.title = "Error Creating Account"
+                    alert.message = "A user with that email or username already exists"
+                    alert.addButtonWithTitle("Ok")
+                    alert.show()
+                } else {
+                currentUser = user!
+                self.performSegueWithIdentifier("CreateAccountDoneSegue", sender: self)
+                }
+            } else {
+                let alert = UIAlertView()
+                alert.title = "Error Creating Account"
+                alert.message = "Check passwords match or please try again later"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+        })
+    }
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "CreateAccountDoneSegue" {
@@ -56,7 +82,32 @@ class CreateAccountViewController: UIViewController {
         return true
     }
     
+    // MARK: - Private helper methods
     
+    func _handleCreateAccount(username: String, password: String, email: String, callback: (User?) -> ()){
+        Alamofire.request(.POST, "http://localhost:3000/user/create", parameters: ["user": ["username":username, "password":password, "email":email]]).responseJSON { (req, res, json, error) in
+            if(error != nil) {
+                NSLog("Error: \(error)")
+                println(req)
+                println(res)
+                callback(nil)
+            }
+            else {
+                NSLog("Success")
+                var json = JSON(json!)
+                println(json)
+                if let string = json.rawString(){
+                    if (string == "a user with that email or username already exists"){
+                        callback(User(id: -1, username: "a user with that email or username already exists", email: "email"))
+                    } else if (string == "save failed"){
+                        callback(nil)
+                    } else {
+                        callback(User(id: json["id"].intValue, username: json["username"].stringValue, email: json["email"].stringValue))
+                    }
+                }
+            }
+        }
+    }
  
     
 
