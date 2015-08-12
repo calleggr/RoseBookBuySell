@@ -27,6 +27,9 @@
 		C80324801B730BDF00D315C8 /* MyListingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */; };
 		C80324821B730BE900D315C8 /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80324811B730BE900D315C8 /* OffersTableViewCell.swift */; };
 		C85B3AAB1B7313680072B158 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85B3AAA1B7313680072B158 /* SwiftyJSON.framework */; };
+		C87A81D11B7AB05B00E20874 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D01B7AB05B00E20874 /* OfferModel.swift */; };
+		C87A81D31B7AB16500E20874 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D21B7AB16500E20874 /* ListingModel.swift */; };
+		C87A81D51B7AB1B300E20874 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D41B7AB1B300E20874 /* BookModel.swift */; };
 		C87B6F3C1B7A273000DA46C7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B6F3B1B7A273000DA46C7 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,9 @@
 		C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListingsTableViewCell.swift; sourceTree = "<group>"; };
 		C80324811B730BE900D315C8 /* OffersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewCell.swift; sourceTree = "<group>"; };
 		C85B3AAA1B7313680072B158 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		C87A81D01B7AB05B00E20874 /* OfferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
+		C87A81D21B7AB16500E20874 /* ListingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
+		C87A81D41B7AB1B300E20874 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		C87B6F3B1B7A273000DA46C7 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E47F61E152C81C0F8C1BFD2D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +138,9 @@
 				C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */,
 				37F279B81B5D6055009060C0 /* SendEmailResponseViewController.swift */,
 				C87B6F3B1B7A273000DA46C7 /* UserModel.swift */,
+				C87A81D01B7AB05B00E20874 /* OfferModel.swift */,
+				C87A81D21B7AB16500E20874 /* ListingModel.swift */,
+				C87A81D41B7AB1B300E20874 /* BookModel.swift */,
 			);
 			path = RoseBookBuySell;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 				37F279B31B5D5EC8009060C0 /* ListingsTableViewController.swift in Sources */,
 				C80324801B730BDF00D315C8 /* MyListingsTableViewCell.swift in Sources */,
 				37F279AB1B5D5DF9009060C0 /* CreateAccountViewController.swift in Sources */,
+				C87A81D31B7AB16500E20874 /* ListingModel.swift in Sources */,
 				37F279B51B5D5EDE009060C0 /* MyListingsTableViewController.swift in Sources */,
 				37F279871B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodeld in Sources */,
 				37F279841B5D5B9D009060C0 /* AppDelegate.swift in Sources */,
@@ -341,9 +351,11 @@
 				C803247E1B730BD500D315C8 /* ListingTableViewCell.swift in Sources */,
 				37F279B71B5D5EF1009060C0 /* OffersTableViewController.swift in Sources */,
 				37F279B91B5D6055009060C0 /* SendEmailResponseViewController.swift in Sources */,
+				C87A81D51B7AB1B300E20874 /* BookModel.swift in Sources */,
 				37F279A91B5D5DE3009060C0 /* HomePageViewController.swift in Sources */,
 				37F279B11B5D5E94009060C0 /* SendEmailViewController.swift in Sources */,
 				C87B6F3C1B7A273000DA46C7 /* UserModel.swift in Sources */,
+				C87A81D11B7AB05B00E20874 /* OfferModel.swift in Sources */,
 				37F279AF1B5D5E49009060C0 /* SellPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
