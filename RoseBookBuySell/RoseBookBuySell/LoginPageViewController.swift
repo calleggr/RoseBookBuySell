@@ -24,6 +24,7 @@ class LoginPageViewController: UIViewController {
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
         view.addGestureRecognizer(tap)
         password.secureTextEntry = true
+        self.navigationController?.navigationBar.hidden = true
         println(currentUser?.username)
 
     }
