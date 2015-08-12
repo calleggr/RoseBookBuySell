@@ -42,7 +42,10 @@ class OffersTableViewController: UITableViewController {
   
         cell.nameLabel.text = demoName[indexPath.row]
         cell.offerLabel.text = demoPrice[indexPath.row]
-        
+        cell.layer.cornerRadius = 8.0
+        cell.layer.masksToBounds = true
+        cell.layer.borderColor = UIColor(red: 0.71, green: 0.04, blue: 0.22, alpha: 1.0).CGColor
+        cell.layer.borderWidth = 1.5
         
         return cell
     }

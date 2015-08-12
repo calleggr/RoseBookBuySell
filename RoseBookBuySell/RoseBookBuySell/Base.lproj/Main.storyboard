@@ -530,7 +530,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uug-qk-vwu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.70980392160000005" green="0.039215686270000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyListCell" id="5Q7-rh-rdO" customClass="MyListingsTableViewCell" customModule="RoseBookBuySell" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -615,7 +615,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="YCd-Vr-Kmw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.70980392160000005" green="0.039215686270000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OffersCell" id="wUM-dM-eYW" customClass="OffersTableViewCell" customModule="RoseBookBuySell" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -816,7 +816,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="NKJ-ZX-UzK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.70980392160000005" green="0.039215686270000001" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListingCell" id="erm-58-rgI" customClass="ListingTableViewCell" customModule="RoseBookBuySell" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1270,8 +1270,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="qXp-1u-zrS"/>
-        <segue reference="a9u-Nc-9X1"/>
-        <segue reference="N3i-ZV-UHz"/>
         <segue reference="kwk-vq-Urj"/>
+        <segue reference="WU5-7b-FtB"/>
+        <segue reference="Dfd-u3-E35"/>
     </inferredMetricsTieBreakers>
 </document>
