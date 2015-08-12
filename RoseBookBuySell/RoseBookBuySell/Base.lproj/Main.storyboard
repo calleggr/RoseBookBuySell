@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -37,26 +37,17 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="172" width="568" height="30"/>
-                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WuM-xf-YWM">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="236" width="568" height="30"/>
-                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzK-rj-Adq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="109" y="368" width="383" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="clickedSignIn:" destination="Nbc-q7-FjW" eventType="touchUpInside" id="pbz-lM-hVA"/>
                                 </connections>
@@ -66,9 +57,6 @@
                                 <state key="normal" title="Create Account">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="24" y="432" width="552" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="6Dc-WV-iV7" kind="showDetail" identifier="CreateAccountSegue" id="Dkp-iq-vbe"/>
                                 </connections>
@@ -84,8 +72,7 @@
                                         <exclude reference="aEi-N7-ZRU"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="300" width="600" height="0.0"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="aEi-N7-ZRU"/>
                                     </mask>
@@ -222,9 +209,6 @@
                                 <state key="normal" title="Find Books">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="57" y="179" width="486" height="36"/>
-                                </variation>
                                 <connections>
                                     <segue destination="fkK-Ac-xZ5" kind="showDetail" id="wXT-9v-TF1"/>
                                 </connections>
@@ -235,9 +219,6 @@
                                 <state key="normal" title="Sell a Book">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="250" y="279" width="100" height="36"/>
-                                </variation>
                                 <connections>
                                     <segue destination="Os5-vO-XX2" kind="showDetail" id="k2f-Lh-mzX"/>
                                 </connections>
@@ -248,9 +229,6 @@
                                 <state key="normal" title="My Listings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="57" y="379" width="486" height="36"/>
-                                </variation>
                                 <connections>
                                     <segue destination="SPC-e2-LSk" kind="showDetail" id="N3i-ZV-UHz"/>
                                 </connections>
@@ -260,9 +238,6 @@
                                 <state key="normal" title="Sign Out">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="540" width="568" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="pressedSignOut:" destination="B5t-8P-scV" eventType="touchUpInside" id="MeK-L1-8LF"/>
                                     <segue destination="Nbc-q7-FjW" kind="showDetail" id="kwk-vq-Urj"/>
@@ -355,9 +330,6 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="28" y="534" width="62" height="36"/>
-                                </variation>
                                 <connections>
                                     <segue destination="B5t-8P-scV" kind="showDetail" id="H2X-bO-ydi"/>
                                 </connections>
@@ -366,9 +338,6 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="221" width="568" height="30"/>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="Os5-vO-XX2" id="1ie-5b-pxH"/>
                                 </connections>
@@ -377,9 +346,6 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="285" width="568" height="30"/>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="Os5-vO-XX2" id="ikn-Ne-MsU"/>
                                 </connections>
@@ -388,9 +354,6 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="349" width="568" height="30"/>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="Os5-vO-XX2" id="b6f-p2-9QJ"/>
                                 </connections>
@@ -401,9 +364,6 @@
                                 <state key="normal" title="List Book!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="483" y="534" width="89" height="36"/>
-                                </variation>
                                 <connections>
                                     <action selector="listBookPressed:" destination="Os5-vO-XX2" eventType="touchUpInside" id="eIr-jE-NhY"/>
                                 </connections>
@@ -413,9 +373,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="50" width="568" height="39"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -591,9 +548,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="543" y="11" width="41" height="22"/>
-                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -679,9 +633,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                <rect key="frame" x="486" y="11" width="106" height="21"/>
-                                            </variation>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -751,9 +702,6 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="129" width="568" height="30"/>
-                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seb-b7-jHF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -761,9 +709,6 @@
                                 <state key="normal" title="Send Email">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="24" y="534" width="552" height="36"/>
-                                </variation>
                                 <connections>
                                     <segue destination="SPC-e2-LSk" kind="show" id="okD-Xh-bc1"/>
                                 </connections>
@@ -773,18 +718,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="24" y="50" width="552" height="39"/>
-                                </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hi! I would like to buy your book!" translatesAutoresizingMaskIntoConstraints="NO" id="23k-9g-q6D">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <rect key="frame" x="16" y="175" width="568" height="351"/>
                                 </variation>
                             </textView>
                         </subviews>
@@ -872,7 +813,7 @@
         <scene sceneID="9bx-wA-fyn">
             <objects>
                 <tableViewController id="3Kf-SD-5ET" customClass="ListingsTableViewController" customModule="RoseBookBuySell" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NKJ-ZX-UzK">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="NKJ-ZX-UzK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1328,9 +1269,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="qXp-1u-zrS"/>
+        <segue reference="a9u-Nc-9X1"/>
         <segue reference="N3i-ZV-UHz"/>
-        <segue reference="eoE-Rz-qib"/>
         <segue reference="kwk-vq-Urj"/>
-        <segue reference="wXT-9v-TF1"/>
     </inferredMetricsTieBreakers>
 </document>
