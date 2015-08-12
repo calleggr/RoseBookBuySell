@@ -19,9 +19,12 @@ class Book {
     
     init(id: Int, listing_id: Int, title: String, edition: String, course_number: String, department: String){
         self.id = id
-        self.price = price
         self.listing_id = listing_id
-        self.user_id = user_id
+        self.title = title
+        self.edition = edition
+        self.course_number = course_number
+        self.department = department
+        
     }
     
 }

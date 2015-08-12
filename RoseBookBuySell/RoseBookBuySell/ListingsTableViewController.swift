@@ -7,14 +7,37 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ListingsTableViewController: UITableViewController {
     
     let ShowDetailSegueIdentifier = "listingsBackToHome"
     let listCell = "ListingCell"
-    var demoCourse : [String] = []
-    var demoBook : [String] = []
-    var demoPrice : [String] = []
+    
+    func _handleGetListings(callback: (JSON?) -> ()){
+        Alamofire.request(.GET, "http://localhost:3000/listing/find_all").responseJSON { (req, res, json, error) in
+            if(error != nil) {
+                NSLog("Error: \(error)")
+                println(req)
+                println(res)
+                callback(nil)
+            }
+            else {
+                NSLog("Success")
+                var json = JSON(json!)
+                println(json)
+                if let string = json.rawString(){
+                    if (string == "invalid username or password"){
+                        callback(nil)
+                    } else {
+                        callback(json)
+                    }
+                }
+            }
+        }
+    }
+    
 
     
     override func viewDidLoad() {
@@ -28,6 +51,7 @@ class ListingsTableViewController: UITableViewController {
         //self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.71, green: 0.04, blue: 0.22, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.71, green: 0.04, blue: 0.22, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
     }
     
     
@@ -47,27 +71,24 @@ class ListingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return demoBook.count
+        return listings!.count
     }
 
     
 
     override func viewWillAppear(animated: Bool) {
-        //API HERE to generate the list
-        demoCourse=["CSSE 220", "MA 374", "CSSE 484"]
-        demoBook=["Big Java", "Fundamentalst of thermophysics", "iOS Dev"]
-        demoPrice=["$230", "$100", "$998"]
-        
+        super.viewWillAppear(animated)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(listCell, forIndexPath: indexPath) as! ListingTableViewCell
         
         // Configure the cell...
-        
-        cell.bookLabel.text = demoBook[indexPath.row]
-        cell.courseLabel.text = demoCourse[indexPath.row]
-        cell.priceLabel.text = demoPrice[indexPath.row]
+        var currentListing = listings![indexPath.row]
+        println("table")
+        cell.bookLabel.text = currentListing.book.title
+        cell.courseLabel.text = currentListing.book.course_number
+        cell.priceLabel.text = currentListing.price.description
         cell.bookLabel.preferredMaxLayoutWidth = CGRectGetWidth(cell.bookLabel.superview!.frame)/3
         cell.layer.cornerRadius = 8.0
         cell.layer.masksToBounds = true

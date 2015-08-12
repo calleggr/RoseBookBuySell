@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 var currentUser : User?
+var listings : [Listing]?
 
 
 class LoginPageViewController: UIViewController {

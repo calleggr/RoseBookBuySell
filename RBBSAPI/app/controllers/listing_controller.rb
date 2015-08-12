@@ -54,7 +54,7 @@ class ListingController < ApplicationController
       end
       render :json => ret
     else
-      render :json => "user has no listings".to_json
+      render :json => "there are no listings".to_json
     end
   end
 
