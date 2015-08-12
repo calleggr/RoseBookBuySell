@@ -52,7 +52,7 @@ class ListingsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         //API HERE to generate the list
         demoCourse=["CSSE 220", "MA 374", "CSSE 484"]
-        demoBook=["Big Javaaaaaaabbbb", "Math", "iOS Dev"]
+        demoBook=["Big Java", "Fundamentalst of thermophysics", "iOS Dev"]
         demoPrice=["$230", "$100", "$998"]
         
     }
