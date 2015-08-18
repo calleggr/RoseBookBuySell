@@ -46,7 +46,7 @@ class ListingController < ApplicationController
   end
 
   def find_all
-    @listings = Listing.all
+    @listings = Listing.where("user_id != ?", params[:user_id]).all
     if !@listings.empty?
       ret = []
       @listings.each do |listing|

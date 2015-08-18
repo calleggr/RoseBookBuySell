@@ -62,7 +62,7 @@ class ListingsTableViewController: UITableViewController {
         // Configure the cell...
         var currentListing = listings![indexPath.row]
         cell.bookLabel.text = currentListing.book.title
-        cell.courseLabel.text = currentListing.book.course_number + " " + currentListing.book.department
+        cell.courseLabel.text = currentListing.book.department + " " + currentListing.book.course_number
         cell.priceLabel.text = "$"+currentListing.price.description
         cell.bookLabel.preferredMaxLayoutWidth = CGRectGetWidth(cell.bookLabel.superview!.frame)/3
         cell.layer.cornerRadius = 8.0

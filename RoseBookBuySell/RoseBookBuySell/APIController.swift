@@ -13,7 +13,7 @@ import SwiftyJSON
 
 
 func handleGetListings(callback: (JSON?) -> ()){
-    Alamofire.request(.GET, "http://localhost:3000/listing/find_all").responseJSON { (req, res, json, error) in
+    Alamofire.request(.GET, "http://localhost:3000/listing/find_all/"+currentUser!.id.description).responseJSON { (req, res, json, error) in
         if(error != nil) {
             NSLog("Error in GET Listings: \(error)")
             println(req)
