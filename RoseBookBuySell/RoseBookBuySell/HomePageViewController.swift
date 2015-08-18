@@ -49,6 +49,7 @@ class HomePageViewController: UIViewController {
     }
 
     @IBAction func pressedSellBook(sender: AnyObject) {
+        self.performSegueWithIdentifier("SellBookSegue", sender: self)
     }
     
     

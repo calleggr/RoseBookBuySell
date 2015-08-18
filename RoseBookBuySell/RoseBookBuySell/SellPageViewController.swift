@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SellPageViewController: UIViewController {
 
@@ -17,20 +18,27 @@ class SellPageViewController: UIViewController {
     @IBOutlet weak var department: UITextField!
 
     @IBAction func listBookPressed(sender: AnyObject) {
-        //API CALL IN HERE, CREATION TIME
-        if (price.text != "test" || courseNumber.text != "test" || bookTitle.text != "test") {
-            
+        var new_book = Book(id: -1, listing_id: -1, title: bookTitle.text, edition: edition.text, course_number: courseNumber.text, department: department.text)
+        if let priceInt = price.text.toInt() {
+            handleCreateListing(priceInt, new_book, { (json : JSON?) -> Void in
+                if (json != nil){
+                    self.performSegueWithIdentifier("GoBackToHome", sender: self)
+                } else {
+                    let alert = UIAlertView()
+                    alert.title = "Error Creating Listing"
+                    alert.message = "Check all fields are correct or please try again later"
+                    alert.addButtonWithTitle("Ok")
+                    alert.show()
+                }
+            })
+        } else {
             let alert = UIAlertView()
-            alert.title = "Error Listing Book"
-            alert.message = "Check data entered and try again."
-            alert.addButtonWithTitle("Ok")
+            alert.title = "Please enter a number for price"
+            alert.addButtonWithTitle("Ugh Fine")
             alert.show()
-            
         }
-            
-       
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

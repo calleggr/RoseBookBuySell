@@ -11,9 +11,67 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//  Undeployed at the moment, so all calls are to localhost
+let url = "http://localhost:3000/"
+
+
+/*
+ API calls to the User contoller
+*/
+func handleLogin(username: String, password: String, callback: (User?) -> ()){
+    Alamofire.request(.POST, url + "user/login", parameters: ["username":username, "password":password]).responseJSON { (req, res, json, error) in
+        if(error != nil) {
+            NSLog("Error in POST login: \(error)")
+            println(req)
+            println(res)
+            callback(nil)
+        }
+        else {
+            NSLog("Success in POST login")
+            var json = JSON(json!)
+            println(json)
+            if let string = json.rawString(){
+                if (string == "invalid username or password"){
+                    callback(nil)
+                } else {
+                    callback(User(id: json["id"].intValue, username: json["username"].stringValue, email: json["email"].stringValue))
+                }
+            }
+        }
+    }
+}
+
+func handleCreateAccount(username: String, password: String, email: String, callback: (User?) -> ()){
+    Alamofire.request(.POST, url + "user/create", parameters: ["user": ["username":username, "password":password, "email":email]]).responseJSON { (req, res, json, error) in
+        if(error != nil) {
+            NSLog("Error in POST create account: \(error)")
+            println(req)
+            println(res)
+            callback(nil)
+        }
+        else {
+            NSLog("Success in POST create account")
+            var json = JSON(json!)
+            println(json)
+            if let string = json.rawString(){
+                if (string == "a user with that email or username already exists"){
+                    callback(User(id: -1, username: "a user with that email or username already exists", email: "email"))
+                } else if (string == "save failed"){
+                    callback(nil)
+                } else {
+                    callback(User(id: json["id"].intValue, username: json["username"].stringValue, email: json["email"].stringValue))
+                }
+            }
+        }
+    }
+}
+
+/*
+ API calls to the Listing controller
+*/
 
 func handleGetListings(callback: (JSON?) -> ()){
-    Alamofire.request(.GET, "http://localhost:3000/listing/find_all/"+currentUser!.id.description).responseJSON { (req, res, json, error) in
+    Alamofire.request(.GET, url + "listing/find_all/" + currentUser!.id.description).responseJSON { (req, res, json, error) in
         if(error != nil) {
             NSLog("Error in GET Listings: \(error)")
             println(req)
@@ -34,56 +92,8 @@ func handleGetListings(callback: (JSON?) -> ()){
     }
 }
 
-func handleLogin(username: String, password: String, callback: (User?) -> ()){
-    Alamofire.request(.POST, "http://localhost:3000/user/login", parameters: ["username":username, "password":password]).responseJSON { (req, res, json, error) in
-        if(error != nil) {
-            NSLog("Error: \(error)")
-            println(req)
-            println(res)
-            callback(nil)
-        }
-        else {
-            NSLog("Success")
-            var json = JSON(json!)
-            println(json)
-            if let string = json.rawString(){
-                if (string == "invalid username or password"){
-                    callback(nil)
-                } else {
-                    callback(User(id: json["id"].intValue, username: json["username"].stringValue, email: json["email"].stringValue))
-                }
-            }
-        }
-    }
-}
-
-func handleCreateAccount(username: String, password: String, email: String, callback: (User?) -> ()){
-    Alamofire.request(.POST, "http://localhost:3000/user/create", parameters: ["user": ["username":username, "password":password, "email":email]]).responseJSON { (req, res, json, error) in
-        if(error != nil) {
-            NSLog("Error: \(error)")
-            println(req)
-            println(res)
-            callback(nil)
-        }
-        else {
-            NSLog("Success")
-            var json = JSON(json!)
-            println(json)
-            if let string = json.rawString(){
-                if (string == "a user with that email or username already exists"){
-                    callback(User(id: -1, username: "a user with that email or username already exists", email: "email"))
-                } else if (string == "save failed"){
-                    callback(nil)
-                } else {
-                    callback(User(id: json["id"].intValue, username: json["username"].stringValue, email: json["email"].stringValue))
-                }
-            }
-        }
-    }
-}
-
 func handleGetMyListings(callback: (JSON?) -> ()){
-    Alamofire.request(.GET, "http://localhost:3000/listing/find_user_id/" + currentUser!.id.description).responseJSON { (req, res, json, error) in
+    Alamofire.request(.GET, url + "listing/find_user_id/" + currentUser!.id.description).responseJSON { (req, res, json, error) in
         if(error != nil) {
             NSLog("Error in GET my listings: \(error)")
             println(req)
@@ -94,6 +104,27 @@ func handleGetMyListings(callback: (JSON?) -> ()){
             var json = JSON(json!)
             if let string = json.rawString(){
                 if (string == "user has no listings"){
+                    callback(nil)
+                } else {
+                    callback(json)
+                }
+            }
+        }
+    }
+}
+
+func handleCreateListing(price: Int, book: Book, callback: (JSON?) -> ()){
+    Alamofire.request(.POST, url + "listing/create", parameters: ["listing" : ["user_id" : currentUser!.id, "price" : price], "book" : ["title":book.title, "course_number" : book.course_number, "department" : book.department, "edition" : book.edition]]).responseJSON { (req, res, json, error) in
+        if(error != nil) {
+            NSLog("Error in POST create listing: \(error)")
+            println(req)
+            println(res)
+            callback(nil)
+        } else {
+            NSLog("Success POST create listing")
+            var json = JSON(json!)
+            if let string = json.rawString(){
+                if (string == "failed to save book" || string == "failed to save listing"){
                     callback(nil)
                 } else {
                     callback(json)
