@@ -33,6 +33,8 @@
 		C87A81D31B7AB16500E20874 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D21B7AB16500E20874 /* ListingModel.swift */; };
 		C87A81D51B7AB1B300E20874 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D41B7AB1B300E20874 /* BookModel.swift */; };
 		C87B6F3C1B7A273000DA46C7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B6F3B1B7A273000DA46C7 /* UserModel.swift */; };
+		C89C402B1B83C281006235F9 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89C402A1B83C281006235F9 /* APIController.swift */; };
+		C89C402D1B83C571006235F9 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = C89C402C1B83C571006235F9 /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		C87A81D21B7AB16500E20874 /* ListingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
 		C87A81D41B7AB1B300E20874 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		C87B6F3B1B7A273000DA46C7 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C89C402A1B83C281006235F9 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		C89C402C1B83C571006235F9 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 		E47F61E152C81C0F8C1BFD2D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +149,7 @@
 				C87A81D01B7AB05B00E20874 /* OfferModel.swift */,
 				C87A81D21B7AB16500E20874 /* ListingModel.swift */,
 				C87A81D41B7AB1B300E20874 /* BookModel.swift */,
+				C89C402A1B83C281006235F9 /* APIController.swift */,
 			);
 			path = RoseBookBuySell;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 		37F279811B5D5B9D009060C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C89C402C1B83C571006235F9 /* image.png */,
 				C818E5AE1B7B8E2100537431 /* R logo.png */,
 				C818E5B01B7B8E2A00537431 /* Rose Banner.png */,
 				37F279821B5D5B9D009060C0 /* Info.plist */,
@@ -282,6 +288,7 @@
 				C818E5B11B7B8E2A00537431 /* Rose Banner.png in Resources */,
 				37F279931B5D5B9E009060C0 /* LaunchScreen.xib in Resources */,
 				37F279901B5D5B9E009060C0 /* Images.xcassets in Resources */,
+				C89C402D1B83C571006235F9 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +362,7 @@
 				37F279B51B5D5EDE009060C0 /* MyListingsTableViewController.swift in Sources */,
 				37F279871B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodeld in Sources */,
 				37F279841B5D5B9D009060C0 /* AppDelegate.swift in Sources */,
+				C89C402B1B83C281006235F9 /* APIController.swift in Sources */,
 				37F279AD1B5D5E25009060C0 /* LoginPageViewController.swift in Sources */,
 				C803247E1B730BD500D315C8 /* ListingTableViewCell.swift in Sources */,
 				37F279B71B5D5EF1009060C0 /* OffersTableViewController.swift in Sources */,

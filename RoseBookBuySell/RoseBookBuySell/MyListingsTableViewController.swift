@@ -25,14 +25,9 @@ class MyListingsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
-    var demoCourse : [String] = []
-    var demoBook : [String] = []
-    var demoPrice : [String] = []
-    override func viewWillAppear(animated: Bool) {
-        //API HERE to generate the list
 
-        demoBook=["Big Java", "Math", "iOS Dev"]
-        demoPrice=["$230", "$100", "$998"]
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationItem.title = "My Listings"
     }
 
@@ -40,9 +35,9 @@ class MyListingsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(listCell, forIndexPath: indexPath) as! MyListingsTableViewCell
         
         // Configure the cell...
-   
-        cell.bookLabel.text = demoBook[indexPath.row]
-        cell.priceLabel.text = demoPrice[indexPath.row]
+        var listing = myListings![indexPath.row]
+        cell.bookLabel.text = listing.book.title
+        cell.priceLabel.text = "$"+listing.price.description
         cell.layer.cornerRadius = 8.0
         cell.layer.masksToBounds = true
         cell.layer.borderColor = UIColor(red: 0.71, green: 0.04, blue: 0.22, alpha: 1.0).CGColor
@@ -66,7 +61,7 @@ class MyListingsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return demoBook.count
+        return myListings!.count
     }
 
     /*

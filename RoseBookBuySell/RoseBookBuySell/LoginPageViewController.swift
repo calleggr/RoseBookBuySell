@@ -12,6 +12,7 @@ import SwiftyJSON
 
 var currentUser : User?
 var listings : [Listing]?
+var myListings : [Listing]?
 
 
 class LoginPageViewController: UIViewController {
@@ -24,6 +25,7 @@ class LoginPageViewController: UIViewController {
         
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
         view.addGestureRecognizer(tap)
+        username.selected = true
         password.secureTextEntry = true
         self.navigationController?.navigationBar.hidden = true
         println(currentUser?.username)
@@ -43,7 +45,7 @@ class LoginPageViewController: UIViewController {
 
     @IBAction func clickedSignIn(sender: AnyObject) {
         //self.performSegueWithIdentifier("LoggedInSegue", sender: self)
-        _handleLogin(username.text, password: password.text, callback: { (user : User?) -> Void in
+        handleLogin(username.text, password.text, { (user : User?) -> Void in
             if (user != nil) {
                 currentUser = user!
                 self.performSegueWithIdentifier("LoggedInSegue", sender: self)
@@ -59,7 +61,6 @@ class LoginPageViewController: UIViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "LoggedInSegue" {
-            //ADD API CALL TO LOG IN HERE
             return true
         }
         
@@ -69,28 +70,7 @@ class LoginPageViewController: UIViewController {
     
     // MARK: -Private helper methods
     
-    func _handleLogin(username: String, password: String, callback: (User?) -> ()){
-        Alamofire.request(.POST, "http://localhost:3000/user/login", parameters: ["username":username, "password":password]).responseJSON { (req, res, json, error) in
-            if(error != nil) {
-                NSLog("Error: \(error)")
-                println(req)
-                println(res)
-                callback(nil)
-            }
-            else {
-                NSLog("Success")
-                var json = JSON(json!)
-                println(json)
-                if let string = json.rawString(){
-                    if (string == "invalid username or password"){
-                        callback(nil)
-                    } else {
-                        callback(User(id: json["id"].intValue, username: json["username"].stringValue, email: json["email"].stringValue))
-                    }
-                }
-            }
-        }
-    }
+    
     
 
     /*

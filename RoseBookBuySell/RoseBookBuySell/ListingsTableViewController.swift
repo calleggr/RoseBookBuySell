@@ -15,31 +15,6 @@ class ListingsTableViewController: UITableViewController {
     let ShowDetailSegueIdentifier = "listingsBackToHome"
     let listCell = "ListingCell"
     
-    func _handleGetListings(callback: (JSON?) -> ()){
-        Alamofire.request(.GET, "http://localhost:3000/listing/find_all").responseJSON { (req, res, json, error) in
-            if(error != nil) {
-                NSLog("Error: \(error)")
-                println(req)
-                println(res)
-                callback(nil)
-            }
-            else {
-                NSLog("Success")
-                var json = JSON(json!)
-                println(json)
-                if let string = json.rawString(){
-                    if (string == "invalid username or password"){
-                        callback(nil)
-                    } else {
-                        callback(json)
-                    }
-                }
-            }
-        }
-    }
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -79,11 +54,6 @@ class ListingsTableViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        var book = Book(id: 1, listing_id: 1, title: "DEMO BOOk TitLE", edition: "7th edition", course_number: "csse-484", department: "Computer Science and stuff")
-//        
-//        var listing = Listing(id: 1, price: 30, user_id: 1, book: book)
-//        
-//        listings?.append(listing)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -91,10 +61,9 @@ class ListingsTableViewController: UITableViewController {
         
         // Configure the cell...
         var currentListing = listings![indexPath.row]
-        println("table")
         cell.bookLabel.text = currentListing.book.title
-        cell.courseLabel.text = currentListing.book.course_number
-        cell.priceLabel.text = currentListing.price.description
+        cell.courseLabel.text = currentListing.book.course_number + " " + currentListing.book.department
+        cell.priceLabel.text = "$"+currentListing.price.description
         cell.bookLabel.preferredMaxLayoutWidth = CGRectGetWidth(cell.bookLabel.superview!.frame)/3
         cell.layer.cornerRadius = 8.0
         cell.layer.masksToBounds = true
@@ -145,14 +114,12 @@ class ListingsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //if segue.identifier == ShowDetailSegueIdentifier{
+        if segue.identifier == "ShowBookDetail"{
             let index = self.tableView.indexPathForSelectedRow()
             var list = listings![index!.row]
             println(list.book.title)
             (segue.destinationViewController as! SendEmailViewController).thisList = list
-
-            
-        //}
+        }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }

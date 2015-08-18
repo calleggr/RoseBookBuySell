@@ -21,6 +21,7 @@ class CreateAccountViewController: UIViewController {
         
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismiss")
         view.addGestureRecognizer(tap)
+        username.selected = true
         password.secureTextEntry = true
         confirmPassword.secureTextEntry = true
     }
@@ -37,78 +38,46 @@ class CreateAccountViewController: UIViewController {
     
     
     @IBAction func pressedDoneButton(sender: AnyObject) {
-        _handleCreateAccount(username.text, password: password.text, email: email.text, callback: { (user : User?) -> Void in
-            if (user != nil){
-                if (user!.username == "a user with that email or username already exists") {
+        if (password.text == confirmPassword.text) {
+            handleCreateAccount(username.text, password.text, email.text, { (user : User?) -> Void in
+                if (user != nil){
+                    if (user!.username == "a user with that email or username already exists") {
+                        let alert = UIAlertView()
+                        alert.title = "Error Creating Account"
+                        alert.message = "A user with that email or username already exists"
+                        alert.addButtonWithTitle("Ok")
+                        alert.show()
+                    } else {
+                    currentUser = user!
+                    self.performSegueWithIdentifier("CreateAccountDoneSegue", sender: self)
+                    }
+                } else {
                     let alert = UIAlertView()
                     alert.title = "Error Creating Account"
-                    alert.message = "A user with that email or username already exists"
+                    alert.message = "Check passwords match or please try again later"
                     alert.addButtonWithTitle("Ok")
                     alert.show()
-                } else {
-                currentUser = user!
-                self.performSegueWithIdentifier("CreateAccountDoneSegue", sender: self)
                 }
-            } else {
-                let alert = UIAlertView()
-                alert.title = "Error Creating Account"
-                alert.message = "Check passwords match or please try again later"
-                alert.addButtonWithTitle("Ok")
-                alert.show()
-            }
-        })
+            })
+        } else {
+            password.text = ""
+            confirmPassword.text = ""
+            let alert = UIAlertView()
+            alert.title = "Passwords do not match"
+            alert.message = "Please retype your password"
+            alert.addButtonWithTitle("Ok")
+            alert.show()
+        }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
         if identifier == "CreateAccountDoneSegue" {
-            //ADD API CALL HERE
-            if (username.text != "test" || email.text != "test" || confirmPassword.text != "test" || password.text != "test") {
-                
-                let alert = UIAlertView()
-                alert.title = "Error Signing Creating Account"
-                alert.message = "Check data entered and try again."
-                alert.addButtonWithTitle("Ok")
-                alert.show()
-                
-                return false
-            }
-                
-            else {
-                return true
-            }
+            return true
         }
         
         // by default, transition
         return true
     }
-    
-    // MARK: - Private helper methods
-    
-    func _handleCreateAccount(username: String, password: String, email: String, callback: (User?) -> ()){
-        Alamofire.request(.POST, "http://localhost:3000/user/create", parameters: ["user": ["username":username, "password":password, "email":email]]).responseJSON { (req, res, json, error) in
-            if(error != nil) {
-                NSLog("Error: \(error)")
-                println(req)
-                println(res)
-                callback(nil)
-            }
-            else {
-                NSLog("Success")
-                var json = JSON(json!)
-                println(json)
-                if let string = json.rawString(){
-                    if (string == "a user with that email or username already exists"){
-                        callback(User(id: -1, username: "a user with that email or username already exists", email: "email"))
-                    } else if (string == "save failed"){
-                        callback(nil)
-                    } else {
-                        callback(User(id: json["id"].intValue, username: json["username"].stringValue, email: json["email"].stringValue))
-                    }
-                }
-            }
-        }
-    }
- 
     
 
     /*
