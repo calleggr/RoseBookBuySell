@@ -26,15 +26,14 @@ class HomePageViewController: UIViewController {
     func _handleGetListings(callback: (JSON?) -> ()){
         Alamofire.request(.GET, "http://localhost:3000/listing/find_all").responseJSON { (req, res, json, error) in
             if(error != nil) {
-                NSLog("Error: \(error)")
+                NSLog("Error in GET listings: \(error)")
                 println(req)
                 println(res)
                 callback(nil)
             }
             else {
-                NSLog("Success")
+                NSLog("Success GET listings")
                 var json = JSON(json!)
-                println(json)
                 if let string = json.rawString(){
                     if (string == "there are no listings"){
                         callback(nil)
@@ -44,6 +43,51 @@ class HomePageViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func _handleGetMyListings(callback: (JSON?) -> ()){
+        Alamofire.request(.GET, "http://localhost:3000/listing/find_user_id/" + currentUser!.id.description).responseJSON { (req, res, json, error) in
+            if(error != nil) {
+                NSLog("Error in GET my listings: \(error)")
+                println(req)
+                println(res)
+                callback(nil)
+            } else {
+                NSLog("Success GET My Listings")
+                var json = JSON(json!)
+                if let string = json.rawString(){
+                    if (string == "user has no listings"){
+                        callback(nil)
+                    } else {
+                        callback(json)
+                    }
+                }
+            }
+        }
+    }
+    
+    @IBAction func pressedMyListings(sender: AnyObject) {
+        if (myListings == nil){
+            myListings = []
+        } else {
+            myListings!.removeAll(keepCapacity: true)
+        }
+        _handleGetMyListings({ (json : JSON?) -> Void in
+            if (json != nil) {
+                for var i = 0; i < json!.count; ++i {
+                    var book = Book(id: json![i]["book"]["id"].intValue, listing_id: json![i]["book"]["listing_id"].intValue, title: json![i]["book"]["title"].stringValue, edition: json![i]["book"]["edition"].stringValue, course_number: json![i]["book"]["course_number"].stringValue, department: json![i]["book"]["department"].stringValue)
+                    var listing = Listing(id: json![i]["id"].intValue, price: json![i]["price"].intValue, user_id: json![i]["user_id"].intValue, book: book)
+                    myListings!.append(listing)
+                }//change this
+                //self.performSegueWithIdentifier("FindBooksSegue", sender: self)
+            } else {
+                let alert = UIAlertView()
+                alert.title = "You have no listings!"
+                alert.message = "Click sell a book to start making your own listings!"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+        })
     }
     
     @IBAction func pressedFindBooks(sender: AnyObject) {

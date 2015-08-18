@@ -145,14 +145,12 @@ class ListingsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //if segue.identifier == ShowDetailSegueIdentifier{
+        if segue.identifier == "ShowBookDetail"{
             let index = self.tableView.indexPathForSelectedRow()
             var list = listings![index!.row]
             println(list.book.title)
             (segue.destinationViewController as! SendEmailViewController).thisList = list
-
-            
-        //}
+        }
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
