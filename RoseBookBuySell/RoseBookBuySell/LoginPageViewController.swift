@@ -42,6 +42,7 @@ class LoginPageViewController: UIViewController {
     
 
     @IBAction func clickedSignIn(sender: AnyObject) {
+        //self.performSegueWithIdentifier("LoggedInSegue", sender: self)
         _handleLogin(username.text, password: password.text, callback: { (user : User?) -> Void in
             if (user != nil) {
                 currentUser = user!

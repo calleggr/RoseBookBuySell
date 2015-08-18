@@ -14,7 +14,7 @@ class HomePageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(currentUser!.username)
+        //println(currentUser!.username)
         // Do any additional setup after loading the view.
     }
 
@@ -47,6 +47,7 @@ class HomePageViewController: UIViewController {
     }
     
     @IBAction func pressedFindBooks(sender: AnyObject) {
+        //self.performSegueWithIdentifier("FindBooksSegue", sender: self)
         if (listings == nil){
             listings = []
         } else {

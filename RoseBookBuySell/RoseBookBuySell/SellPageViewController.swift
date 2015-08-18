@@ -13,6 +13,8 @@ class SellPageViewController: UIViewController {
     @IBOutlet weak var price: UITextField!
     @IBOutlet weak var courseNumber: UITextField!
     @IBOutlet weak var bookTitle: UITextField!
+    @IBOutlet weak var edition: UITextField!
+    @IBOutlet weak var department: UITextField!
 
     @IBAction func listBookPressed(sender: AnyObject) {
         //API CALL IN HERE, CREATION TIME
