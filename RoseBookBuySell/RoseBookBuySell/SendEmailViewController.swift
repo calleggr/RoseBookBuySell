@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class SendEmailViewController: UIViewController {
 
@@ -63,9 +64,35 @@ class SendEmailViewController: UIViewController {
     }
     
     
-    func sendOffer(test: String){
+    func sendOffer(price: String){
         //Mad API time here
-        println("WE HAVE SEND AN EMAIL OMGOMGOMG")
+        if let priceInt = price.toInt() {
+            self.view.userInteractionEnabled = false
+            var spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+            spinner.center = self.view.center
+            spinner.startAnimating()
+            self.view.addSubview(spinner)
+            handleCreateOffer(priceInt, thisList!.id, { (json : JSON?) -> Void in
+                if (json != nil){
+                    self.view.userInteractionEnabled = true
+                    spinner.stopAnimating()
+                    self.performSegueWithIdentifier("GoBackToListings", sender: self)
+                } else {
+                    self.view.userInteractionEnabled = true
+                    spinner.stopAnimating()
+                    let alert = UIAlertView()
+                    alert.title = "Error Sending Offer"
+                    alert.message = "Check all fields are correct or please try again later"
+                    alert.addButtonWithTitle("Ok")
+                    alert.show()
+                }
+            })
+        } else {
+            let alert = UIAlertView()
+            alert.title = "Please enter a number for price"
+            alert.addButtonWithTitle("Ugh Fine")
+            alert.show()
+        }
     }
 
     /*

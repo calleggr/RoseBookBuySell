@@ -134,3 +134,29 @@ func handleCreateListing(price: Int, book: Book, callback: (JSON?) -> ()){
     }
 }
 
+/*
+ API calls to Offer controller
+*/
+
+func handleCreateOffer(price: Int, listing_id: Int, callback: (JSON?) -> ()){
+    Alamofire.request(.POST, url + "offer/create", parameters: ["offer" : ["user_id" : currentUser!.id, "listing_id" : listing_id, "price" : price]]).responseJSON { (req, res, json, error) in
+        if(error != nil) {
+            NSLog("Error in POST create offer: \(error)")
+            println(req)
+            println(res)
+            callback(nil)
+        } else {
+            NSLog("Success POST create offer")
+            var json = JSON(json!)
+            if let string = json.rawString(){
+                if (string == "User or Listing does not exist" || string == "failed to save offer"){
+                    callback(nil)
+                } else {
+                    callback(json)
+                }
+            }
+        }
+    }
+}
+
+

@@ -117,7 +117,6 @@ class ListingsTableViewController: UITableViewController {
         if segue.identifier == "ShowBookDetail"{
             let index = self.tableView.indexPathForSelectedRow()
             var list = listings![index!.row]
-            println(list.book.title)
             (segue.destinationViewController as! SendEmailViewController).thisList = list
         }
         // Get the new view controller using [segue destinationViewController].

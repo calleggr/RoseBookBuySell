@@ -1321,6 +1321,7 @@
                         <outlet property="editionLabel" destination="2hr-vw-FBH" id="VIv-K0-lyP"/>
                         <outlet property="priceLabel" destination="s0x-6N-wBV" id="dH0-5L-sEJ"/>
                         <outlet property="titleLabel" destination="FEo-a3-mKZ" id="UpS-Y7-Igd"/>
+                        <segue destination="fkK-Ac-xZ5" kind="show" identifier="GoBackToListings" id="7xg-01-8ov"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVA-9l-yUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1575,7 +1576,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="kwk-vq-Urj"/>
         <segue reference="v3d-4K-eNf"/>
-        <segue reference="k3t-w0-07U"/>
         <segue reference="uOV-5J-2Zd"/>
+        <segue reference="7xg-01-8ov"/>
     </inferredMetricsTieBreakers>
 </document>
