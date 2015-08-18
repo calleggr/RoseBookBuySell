@@ -48,6 +48,7 @@ class ListingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "goBack")
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.blackColor()
         //self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.71, green: 0.04, blue: 0.22, alpha: 1.0)
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.71, green: 0.04, blue: 0.22, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]

@@ -75,8 +75,10 @@ class HomePageViewController: UIViewController {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
-        if identifier == "FindBooksSegue" {
-            return true
+        if (identifier != nil) {
+            if identifier == "FindBooksSegue" {
+                return true
+            }
         }
         // by default, transition
         return true

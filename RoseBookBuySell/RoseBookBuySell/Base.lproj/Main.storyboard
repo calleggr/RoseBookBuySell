@@ -1144,6 +1144,9 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="345" width="568" height="30"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="6Dc-WV-iV7" id="0PD-Y3-IRa"/>
                                 </connections>
@@ -1155,6 +1158,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="550" width="48" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="Nbc-q7-FjW" kind="showDetail" identifier="CancelCreateSegue" id="5SE-9o-Oxo"/>
                                 </connections>
@@ -1166,6 +1172,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="539" y="550" width="37" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="pressedDoneButton:" destination="6Dc-WV-iV7" eventType="touchUpInside" id="Bq6-EB-upz"/>
                                 </connections>
@@ -1174,6 +1183,9 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="405" width="568" height="30"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="6Dc-WV-iV7" id="afE-d4-gz9"/>
                                 </connections>
@@ -1182,6 +1194,9 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="225" width="568" height="30"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="6Dc-WV-iV7" id="dNK-62-vsa"/>
                                 </connections>
@@ -1191,11 +1206,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="40" width="568" height="39"/>
+                                </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-AD-Z4F">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="285" width="568" height="30"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="6Dc-WV-iV7" id="uMc-5r-8iF"/>
                                 </connections>

@@ -26,6 +26,8 @@
 		C803247E1B730BD500D315C8 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803247D1B730BD500D315C8 /* ListingTableViewCell.swift */; };
 		C80324801B730BDF00D315C8 /* MyListingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */; };
 		C80324821B730BE900D315C8 /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80324811B730BE900D315C8 /* OffersTableViewCell.swift */; };
+		C818E5AF1B7B8E2100537431 /* R logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C818E5AE1B7B8E2100537431 /* R logo.png */; };
+		C818E5B11B7B8E2A00537431 /* Rose Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = C818E5B01B7B8E2A00537431 /* Rose Banner.png */; };
 		C85B3AAB1B7313680072B158 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85B3AAA1B7313680072B158 /* SwiftyJSON.framework */; };
 		C87A81D11B7AB05B00E20874 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D01B7AB05B00E20874 /* OfferModel.swift */; };
 		C87A81D31B7AB16500E20874 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D21B7AB16500E20874 /* ListingModel.swift */; };
@@ -68,6 +70,8 @@
 		C803247D1B730BD500D315C8 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
 		C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListingsTableViewCell.swift; sourceTree = "<group>"; };
 		C80324811B730BE900D315C8 /* OffersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewCell.swift; sourceTree = "<group>"; };
+		C818E5AE1B7B8E2100537431 /* R logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "R logo.png"; sourceTree = "<group>"; };
+		C818E5B01B7B8E2A00537431 /* Rose Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rose Banner.png"; sourceTree = "<group>"; };
 		C85B3AAA1B7313680072B158 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		C87A81D01B7AB05B00E20874 /* OfferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
 		C87A81D21B7AB16500E20874 /* ListingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 		37F279811B5D5B9D009060C0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C818E5AE1B7B8E2100537431 /* R logo.png */,
+				C818E5B01B7B8E2A00537431 /* Rose Banner.png */,
 				37F279821B5D5B9D009060C0 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -271,7 +277,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C818E5AF1B7B8E2100537431 /* R logo.png in Resources */,
 				37F2798E1B5D5B9E009060C0 /* Main.storyboard in Resources */,
+				C818E5B11B7B8E2A00537431 /* Rose Banner.png in Resources */,
 				37F279931B5D5B9E009060C0 /* LaunchScreen.xib in Resources */,
 				37F279901B5D5B9E009060C0 /* Images.xcassets in Resources */,
 			);
