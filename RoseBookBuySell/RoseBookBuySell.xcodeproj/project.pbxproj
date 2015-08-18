@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37F279841B5D5B9D009060C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279831B5D5B9D009060C0 /* AppDelegate.swift */; };
+		37F279871B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37F279851B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodeld */; };
+		37F2798E1B5D5B9E009060C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F2798C1B5D5B9E009060C0 /* Main.storyboard */; };
+		37F279901B5D5B9E009060C0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37F2798F1B5D5B9E009060C0 /* Images.xcassets */; };
+		37F279931B5D5B9E009060C0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F279911B5D5B9E009060C0 /* LaunchScreen.xib */; };
+		37F2799F1B5D5B9E009060C0 /* RoseBookBuySellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F2799E1B5D5B9E009060C0 /* RoseBookBuySellTests.swift */; };
+		37F279A91B5D5DE3009060C0 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279A81B5D5DE3009060C0 /* HomePageViewController.swift */; };
+		37F279AB1B5D5DF9009060C0 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279AA1B5D5DF9009060C0 /* CreateAccountViewController.swift */; };
+		37F279AD1B5D5E25009060C0 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279AC1B5D5E25009060C0 /* LoginPageViewController.swift */; };
+		37F279AF1B5D5E49009060C0 /* SellPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279AE1B5D5E49009060C0 /* SellPageViewController.swift */; };
+		37F279B11B5D5E94009060C0 /* SendEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279B01B5D5E94009060C0 /* SendEmailViewController.swift */; };
+		37F279B31B5D5EC8009060C0 /* ListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279B21B5D5EC8009060C0 /* ListingsTableViewController.swift */; };
+		37F279B51B5D5EDE009060C0 /* MyListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279B41B5D5EDE009060C0 /* MyListingsTableViewController.swift */; };
+		37F279B71B5D5EF1009060C0 /* OffersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279B61B5D5EF1009060C0 /* OffersTableViewController.swift */; };
+		37F279B91B5D6055009060C0 /* SendEmailResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F279B81B5D6055009060C0 /* SendEmailResponseViewController.swift */; };
+		4E9038A727A7A2C825DB4103 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75CD459B3779660DA22F496E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C803247E1B730BD500D315C8 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803247D1B730BD500D315C8 /* ListingTableViewCell.swift */; };
+		C80324801B730BDF00D315C8 /* MyListingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */; };
+		C80324821B730BE900D315C8 /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80324811B730BE900D315C8 /* OffersTableViewCell.swift */; };
+		C818E5AF1B7B8E2100537431 /* R logo.png in Resources */ = {isa = PBXBuildFile; fileRef = C818E5AE1B7B8E2100537431 /* R logo.png */; };
+		C818E5B11B7B8E2A00537431 /* Rose Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = C818E5B01B7B8E2A00537431 /* Rose Banner.png */; };
+		C85B3AAB1B7313680072B158 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85B3AAA1B7313680072B158 /* SwiftyJSON.framework */; };
+		C87A81D11B7AB05B00E20874 /* OfferModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D01B7AB05B00E20874 /* OfferModel.swift */; };
+		C87A81D31B7AB16500E20874 /* ListingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D21B7AB16500E20874 /* ListingModel.swift */; };
+		C87A81D51B7AB1B300E20874 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A81D41B7AB1B300E20874 /* BookModel.swift */; };
+		C87B6F3C1B7A273000DA46C7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B6F3B1B7A273000DA46C7 /* UserModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37F279991B5D5B9E009060C0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37F279761B5D5B9D009060C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37F2797D1B5D5B9D009060C0;
+			remoteInfo = RoseBookBuySell;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37F2797E1B5D5B9D009060C0 /* RoseBookBuySell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoseBookBuySell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F279821B5D5B9D009060C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37F279831B5D5B9D009060C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37F279861B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RoseBookBuySell.xcdatamodel; sourceTree = "<group>"; };
+		37F2798D1B5D5B9E009060C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37F2798F1B5D5B9E009060C0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		37F279921B5D5B9E009060C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		37F279981B5D5B9E009060C0 /* RoseBookBuySellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RoseBookBuySellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F2799D1B5D5B9E009060C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37F2799E1B5D5B9E009060C0 /* RoseBookBuySellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoseBookBuySellTests.swift; sourceTree = "<group>"; };
+		37F279A81B5D5DE3009060C0 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		37F279AA1B5D5DF9009060C0 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		37F279AC1B5D5E25009060C0 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		37F279AE1B5D5E49009060C0 /* SellPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellPageViewController.swift; sourceTree = "<group>"; };
+		37F279B01B5D5E94009060C0 /* SendEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailViewController.swift; sourceTree = "<group>"; };
+		37F279B21B5D5EC8009060C0 /* ListingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingsTableViewController.swift; sourceTree = "<group>"; };
+		37F279B41B5D5EDE009060C0 /* MyListingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListingsTableViewController.swift; sourceTree = "<group>"; };
+		37F279B61B5D5EF1009060C0 /* OffersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewController.swift; sourceTree = "<group>"; };
+		37F279B81B5D6055009060C0 /* SendEmailResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendEmailResponseViewController.swift; sourceTree = "<group>"; };
+		75CD459B3779660DA22F496E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C0A4A4448287284F77AAE6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C803247D1B730BD500D315C8 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
+		C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyListingsTableViewCell.swift; sourceTree = "<group>"; };
+		C80324811B730BE900D315C8 /* OffersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffersTableViewCell.swift; sourceTree = "<group>"; };
+		C818E5AE1B7B8E2100537431 /* R logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "R logo.png"; sourceTree = "<group>"; };
+		C818E5B01B7B8E2A00537431 /* Rose Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Rose Banner.png"; sourceTree = "<group>"; };
+		C85B3AAA1B7313680072B158 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		C87A81D01B7AB05B00E20874 /* OfferModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferModel.swift; sourceTree = "<group>"; };
+		C87A81D21B7AB16500E20874 /* ListingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingModel.swift; sourceTree = "<group>"; };
+		C87A81D41B7AB1B300E20874 /* BookModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		C87B6F3B1B7A273000DA46C7 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E47F61E152C81C0F8C1BFD2D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37F2797B1B5D5B9D009060C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C85B3AAB1B7313680072B158 /* SwiftyJSON.framework in Frameworks */,
+				4E9038A727A7A2C825DB4103 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37F279951B5D5B9E009060C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37F279751B5D5B9D009060C0 = {
+			isa = PBXGroup;
+			children = (
+				37F279801B5D5B9D009060C0 /* RoseBookBuySell */,
+				37F2799B1B5D5B9E009060C0 /* RoseBookBuySellTests */,
+				37F2797F1B5D5B9D009060C0 /* Products */,
+				752E4930FC45CC1D9BCA9B59 /* Pods */,
+				519AEED0738ADC16A4A39C5A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		37F2797F1B5D5B9D009060C0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37F2797E1B5D5B9D009060C0 /* RoseBookBuySell.app */,
+				37F279981B5D5B9E009060C0 /* RoseBookBuySellTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37F279801B5D5B9D009060C0 /* RoseBookBuySell */ = {
+			isa = PBXGroup;
+			children = (
+				37F279831B5D5B9D009060C0 /* AppDelegate.swift */,
+				37F2798C1B5D5B9E009060C0 /* Main.storyboard */,
+				37F2798F1B5D5B9E009060C0 /* Images.xcassets */,
+				37F279911B5D5B9E009060C0 /* LaunchScreen.xib */,
+				37F279851B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodeld */,
+				37F279811B5D5B9D009060C0 /* Supporting Files */,
+				37F279A81B5D5DE3009060C0 /* HomePageViewController.swift */,
+				37F279AA1B5D5DF9009060C0 /* CreateAccountViewController.swift */,
+				37F279AC1B5D5E25009060C0 /* LoginPageViewController.swift */,
+				37F279AE1B5D5E49009060C0 /* SellPageViewController.swift */,
+				37F279B01B5D5E94009060C0 /* SendEmailViewController.swift */,
+				C803247D1B730BD500D315C8 /* ListingTableViewCell.swift */,
+				37F279B21B5D5EC8009060C0 /* ListingsTableViewController.swift */,
+				37F279B41B5D5EDE009060C0 /* MyListingsTableViewController.swift */,
+				37F279B61B5D5EF1009060C0 /* OffersTableViewController.swift */,
+				C80324811B730BE900D315C8 /* OffersTableViewCell.swift */,
+				C803247F1B730BDF00D315C8 /* MyListingsTableViewCell.swift */,
+				37F279B81B5D6055009060C0 /* SendEmailResponseViewController.swift */,
+				C87B6F3B1B7A273000DA46C7 /* UserModel.swift */,
+				C87A81D01B7AB05B00E20874 /* OfferModel.swift */,
+				C87A81D21B7AB16500E20874 /* ListingModel.swift */,
+				C87A81D41B7AB1B300E20874 /* BookModel.swift */,
+			);
+			path = RoseBookBuySell;
+			sourceTree = "<group>";
+		};
+		37F279811B5D5B9D009060C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C818E5AE1B7B8E2100537431 /* R logo.png */,
+				C818E5B01B7B8E2A00537431 /* Rose Banner.png */,
+				37F279821B5D5B9D009060C0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		37F2799B1B5D5B9E009060C0 /* RoseBookBuySellTests */ = {
+			isa = PBXGroup;
+			children = (
+				37F2799E1B5D5B9E009060C0 /* RoseBookBuySellTests.swift */,
+				37F2799C1B5D5B9E009060C0 /* Supporting Files */,
+			);
+			path = RoseBookBuySellTests;
+			sourceTree = "<group>";
+		};
+		37F2799C1B5D5B9E009060C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				37F2799D1B5D5B9E009060C0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		519AEED0738ADC16A4A39C5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C85B3AAA1B7313680072B158 /* SwiftyJSON.framework */,
+				75CD459B3779660DA22F496E /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		752E4930FC45CC1D9BCA9B59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E47F61E152C81C0F8C1BFD2D /* Pods.debug.xcconfig */,
+				B5C0A4A4448287284F77AAE6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37F2797D1B5D5B9D009060C0 /* RoseBookBuySell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37F279A21B5D5B9E009060C0 /* Build configuration list for PBXNativeTarget "RoseBookBuySell" */;
+			buildPhases = (
+				17E3FC67D2F8C3F67674C8B0 /* Check Pods Manifest.lock */,
+				37F2797A1B5D5B9D009060C0 /* Sources */,
+				37F2797B1B5D5B9D009060C0 /* Frameworks */,
+				37F2797C1B5D5B9D009060C0 /* Resources */,
+				457436B773B583CE66381069 /* Embed Pods Frameworks */,
+				7A78B3C23A4F16132F5EC489 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoseBookBuySell;
+			productName = RoseBookBuySell;
+			productReference = 37F2797E1B5D5B9D009060C0 /* RoseBookBuySell.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37F279971B5D5B9E009060C0 /* RoseBookBuySellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37F279A51B5D5B9E009060C0 /* Build configuration list for PBXNativeTarget "RoseBookBuySellTests" */;
+			buildPhases = (
+				37F279941B5D5B9E009060C0 /* Sources */,
+				37F279951B5D5B9E009060C0 /* Frameworks */,
+				37F279961B5D5B9E009060C0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37F2799A1B5D5B9E009060C0 /* PBXTargetDependency */,
+			);
+			name = RoseBookBuySellTests;
+			productName = RoseBookBuySellTests;
+			productReference = 37F279981B5D5B9E009060C0 /* RoseBookBuySellTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37F279761B5D5B9D009060C0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Gregory Callegari";
+				TargetAttributes = {
+					37F2797D1B5D5B9D009060C0 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					37F279971B5D5B9E009060C0 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 37F2797D1B5D5B9D009060C0;
+					};
+				};
+			};
+			buildConfigurationList = 37F279791B5D5B9D009060C0 /* Build configuration list for PBXProject "RoseBookBuySell" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37F279751B5D5B9D009060C0;
+			productRefGroup = 37F2797F1B5D5B9D009060C0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37F2797D1B5D5B9D009060C0 /* RoseBookBuySell */,
+				37F279971B5D5B9E009060C0 /* RoseBookBuySellTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37F2797C1B5D5B9D009060C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C818E5AF1B7B8E2100537431 /* R logo.png in Resources */,
+				37F2798E1B5D5B9E009060C0 /* Main.storyboard in Resources */,
+				C818E5B11B7B8E2A00537431 /* Rose Banner.png in Resources */,
+				37F279931B5D5B9E009060C0 /* LaunchScreen.xib in Resources */,
+				37F279901B5D5B9E009060C0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37F279961B5D5B9E009060C0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17E3FC67D2F8C3F67674C8B0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		457436B773B583CE66381069 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A78B3C23A4F16132F5EC489 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37F2797A1B5D5B9D009060C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C80324821B730BE900D315C8 /* OffersTableViewCell.swift in Sources */,
+				37F279B31B5D5EC8009060C0 /* ListingsTableViewController.swift in Sources */,
+				C80324801B730BDF00D315C8 /* MyListingsTableViewCell.swift in Sources */,
+				37F279AB1B5D5DF9009060C0 /* CreateAccountViewController.swift in Sources */,
+				C87A81D31B7AB16500E20874 /* ListingModel.swift in Sources */,
+				37F279B51B5D5EDE009060C0 /* MyListingsTableViewController.swift in Sources */,
+				37F279871B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodeld in Sources */,
+				37F279841B5D5B9D009060C0 /* AppDelegate.swift in Sources */,
+				37F279AD1B5D5E25009060C0 /* LoginPageViewController.swift in Sources */,
+				C803247E1B730BD500D315C8 /* ListingTableViewCell.swift in Sources */,
+				37F279B71B5D5EF1009060C0 /* OffersTableViewController.swift in Sources */,
+				37F279B91B5D6055009060C0 /* SendEmailResponseViewController.swift in Sources */,
+				C87A81D51B7AB1B300E20874 /* BookModel.swift in Sources */,
+				37F279A91B5D5DE3009060C0 /* HomePageViewController.swift in Sources */,
+				37F279B11B5D5E94009060C0 /* SendEmailViewController.swift in Sources */,
+				C87B6F3C1B7A273000DA46C7 /* UserModel.swift in Sources */,
+				C87A81D11B7AB05B00E20874 /* OfferModel.swift in Sources */,
+				37F279AF1B5D5E49009060C0 /* SellPageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37F279941B5D5B9E009060C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37F2799F1B5D5B9E009060C0 /* RoseBookBuySellTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37F2799A1B5D5B9E009060C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37F2797D1B5D5B9D009060C0 /* RoseBookBuySell */;
+			targetProxy = 37F279991B5D5B9E009060C0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37F2798C1B5D5B9E009060C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37F2798D1B5D5B9E009060C0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37F279911B5D5B9E009060C0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37F279921B5D5B9E009060C0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37F279A01B5D5B9E009060C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		37F279A11B5D5B9E009060C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37F279A31B5D5B9E009060C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E47F61E152C81C0F8C1BFD2D /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = RoseBookBuySell/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		37F279A41B5D5B9E009060C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5C0A4A4448287284F77AAE6 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = RoseBookBuySell/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		37F279A61B5D5B9E009060C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RoseBookBuySellTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoseBookBuySell.app/RoseBookBuySell";
+			};
+			name = Debug;
+		};
+		37F279A71B5D5B9E009060C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RoseBookBuySellTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RoseBookBuySell.app/RoseBookBuySell";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37F279791B5D5B9D009060C0 /* Build configuration list for PBXProject "RoseBookBuySell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F279A01B5D5B9E009060C0 /* Debug */,
+				37F279A11B5D5B9E009060C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37F279A21B5D5B9E009060C0 /* Build configuration list for PBXNativeTarget "RoseBookBuySell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F279A31B5D5B9E009060C0 /* Debug */,
+				37F279A41B5D5B9E009060C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37F279A51B5D5B9E009060C0 /* Build configuration list for PBXNativeTarget "RoseBookBuySellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37F279A61B5D5B9E009060C0 /* Debug */,
+				37F279A71B5D5B9E009060C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		37F279851B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				37F279861B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodel */,
+			);
+			currentVersion = 37F279861B5D5B9D009060C0 /* RoseBookBuySell.xcdatamodel */;
+			path = RoseBookBuySell.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 37F279761B5D5B9D009060C0 /* Project object */;
+}
