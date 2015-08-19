@@ -24,7 +24,6 @@ class HomePageViewController: UIViewController {
     }
     
     @IBAction func pressedFindBooks(sender: AnyObject) {
-        //self.performSegueWithIdentifier("FindBooksSegue", sender: self)
         if (listings == nil){
             listings = []
         } else {
