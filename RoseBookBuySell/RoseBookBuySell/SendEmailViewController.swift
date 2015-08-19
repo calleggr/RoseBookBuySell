@@ -65,7 +65,6 @@ class SendEmailViewController: UIViewController {
     
     
     func sendOffer(price: String){
-        //Mad API time here
         if let priceInt = price.toInt() {
             self.view.userInteractionEnabled = false
             var spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
@@ -94,15 +93,4 @@ class SendEmailViewController: UIViewController {
             alert.show()
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

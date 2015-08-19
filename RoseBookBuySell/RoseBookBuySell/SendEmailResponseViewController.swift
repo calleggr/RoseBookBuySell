@@ -32,7 +32,7 @@ class SendEmailResponseViewController: UIViewController {
     @IBOutlet weak var body: UITextView!
     @IBAction func pressedSendEmail(sender: AnyObject) {
         self.view.userInteractionEnabled = false
-        var spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        var spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
         spinner.center = self.view.center
         spinner.startAnimating()
         self.view.addSubview(spinner)
@@ -52,15 +52,4 @@ class SendEmailResponseViewController: UIViewController {
             }
         })
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

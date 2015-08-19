@@ -29,7 +29,6 @@ class LoginPageViewController: UIViewController {
         username.selected = true
         password.secureTextEntry = true
         self.navigationController?.navigationBar.hidden = true
-        println(currentUser?.username)
 
     }
     
@@ -68,20 +67,5 @@ class LoginPageViewController: UIViewController {
         // by default, transition
         return true
     }
-    
-    // MARK: -Private helper methods
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
