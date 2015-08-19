@@ -880,7 +880,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="SPC-e2-LSk" kind="show" id="okD-Xh-bc1"/>
+                                    <action selector="pressedSendEmail:" destination="nTV-Ou-11h" eventType="touchUpInside" id="LD7-gS-Obn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compose Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69W-wh-t21">
@@ -889,13 +889,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Email Body Here" translatesAutoresizingMaskIntoConstraints="NO" id="23k-9g-q6D">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23k-9g-q6D">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 </variation>
                             </textView>
                         </subviews>
@@ -957,6 +957,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="body" destination="23k-9g-q6D" id="F0g-uu-zaP"/>
+                        <segue destination="SPC-e2-LSk" kind="show" identifier="SendEmailSegue" id="Fzj-K4-XYY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d41-m9-DN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1576,7 +1580,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="kwk-vq-Urj"/>
         <segue reference="v3d-4K-eNf"/>
-        <segue reference="uOV-5J-2Zd"/>
+        <segue reference="Fzj-K4-XYY"/>
         <segue reference="7xg-01-8ov"/>
     </inferredMetricsTieBreakers>
 </document>

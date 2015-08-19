@@ -168,13 +168,34 @@ func handleGetMyOffers(listing_id: Int, callback: (JSON?) -> ()){
             println(res)
             callback(nil)
         } else {
-            NSLog("Success GET offers: \(error)")
+            NSLog("Success GET offers")
             var json = JSON(json!)
             if let string = json.rawString() {
                 if (string == "user has no offers"){
                     callback(nil)
                 } else {
                     println(json)
+                    callback(json)
+                }
+            }
+        }
+    }
+}
+
+func handleRespondToEmail(offer_id: Int, body: String, callback: (JSON?) -> ()){
+    Alamofire.request(.POST, url + "offer/respond_to_offer", parameters: ["id" : offer_id, "body" : body]).responseJSON { (req, res, json, error) in
+        if(error != nil) {
+            NSLog("Error in POST email response: \(error)")
+            println(req)
+            println(res)
+            callback(nil)
+        } else {
+            NSLog("Success POST email response")
+            var json = JSON(json!)
+            if let string = json.rawString() {
+                if (string == "offer not found") {
+                    callback(nil)
+                } else {
                     callback(json)
                 }
             }
