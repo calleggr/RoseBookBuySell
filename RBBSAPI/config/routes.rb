@@ -13,7 +13,7 @@ RBBSAPI::Application.routes.draw do
 
   post '/offer/create' => 'offer#create'
   get '/offer/find_id/:id' => 'offer#find_id'
-  get '/offer/find_user_id/:user_id' => 'offer#find_user_id'
+  get '/offer/find_listing_id/:listing_id' => 'offer#find_listing_id'
   post '/offer/respond_to_offer' => 'offer#respond_to_offer'
   
 end

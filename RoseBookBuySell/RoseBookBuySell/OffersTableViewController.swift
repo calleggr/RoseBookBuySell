@@ -26,14 +26,9 @@ class OffersTableViewController: UITableViewController {
     }
     
     
-    var demoName : [String] = []
-    var demoPrice : [String] = []
-    
     override func viewWillAppear(animated: Bool) {
         //API HERE to generate the list
-        demoName=["Bill Cosby", "Spiderman", "Bob"]
-        demoPrice=["$10", "$100", "$24"]
-        self.navigationItem.title = "Offers for <book>"
+        self.navigationItem.title = "Offers for \(myOffers![0].book_title)"
         
     }
     
@@ -42,8 +37,8 @@ class OffersTableViewController: UITableViewController {
         
         // Configure the cell...
   
-        cell.nameLabel.text = demoName[indexPath.row]
-        cell.offerLabel.text = demoPrice[indexPath.row]
+        cell.nameLabel.text = myOffers![indexPath.row].user_name
+        cell.offerLabel.text = "$"+myOffers![indexPath.row].price.description
         cell.layer.cornerRadius = 8.0
         cell.layer.masksToBounds = true
         cell.layer.borderColor = UIColor(red: 0.71, green: 0.04, blue: 0.22, alpha: 1.0).CGColor
@@ -67,7 +62,7 @@ class OffersTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return demoName.count
+        return myOffers!.count
     }
 
     /*

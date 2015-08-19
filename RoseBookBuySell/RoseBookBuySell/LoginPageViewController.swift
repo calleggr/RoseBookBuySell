@@ -13,6 +13,7 @@ import SwiftyJSON
 var currentUser : User?
 var listings : [Listing]?
 var myListings : [Listing]?
+var myOffers : [Offer]?
 
 
 class LoginPageViewController: UIViewController {

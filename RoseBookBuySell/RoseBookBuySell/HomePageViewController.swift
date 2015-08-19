@@ -69,7 +69,7 @@ class HomePageViewController: UIViewController {
                     var book = Book(id: json![i]["book"]["id"].intValue, listing_id: json![i]["book"]["listing_id"].intValue, title: json![i]["book"]["title"].stringValue, edition: json![i]["book"]["edition"].stringValue, course_number: json![i]["book"]["course_number"].stringValue, department: json![i]["book"]["department"].stringValue)
                     var listing = Listing(id: json![i]["id"].intValue, price: json![i]["price"].intValue, user_id: json![i]["user_id"].intValue, book: book)
                     myListings!.append(listing)
-                }//change this
+                }
                 self.performSegueWithIdentifier("MyListingsSegue", sender: self)
             } else {
                 let alert = UIAlertView()

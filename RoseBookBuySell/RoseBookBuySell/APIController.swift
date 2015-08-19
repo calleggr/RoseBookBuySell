@@ -159,4 +159,27 @@ func handleCreateOffer(price: Int, listing_id: Int, callback: (JSON?) -> ()){
     }
 }
 
+func handleGetMyOffers(listing_id: Int, callback: (JSON?) -> ()){
+    Alamofire.request(.GET, url + "offer/find_listing_id/" + listing_id.description).responseJSON {
+        (req, res, json, error) in
+        if(error != nil) {
+            NSLog("Error in GET offers: \(error)")
+            println(req)
+            println(res)
+            callback(nil)
+        } else {
+            NSLog("Success GET offers: \(error)")
+            var json = JSON(json!)
+            if let string = json.rawString() {
+                if (string == "user has no offers"){
+                    callback(nil)
+                } else {
+                    println(json)
+                    callback(json)
+                }
+            }
+        }
+    }
+}
+
 

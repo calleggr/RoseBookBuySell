@@ -764,7 +764,6 @@
                                 <connections>
                                     <outlet property="bookLabel" destination="gdD-0M-09f" id="eNO-9r-Sd0"/>
                                     <outlet property="priceLabel" destination="9NA-Jf-lVD" id="WC8-gN-Mae"/>
-                                    <segue destination="k9a-kb-0OD" kind="show" id="MB2-Sa-4Fm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -776,6 +775,7 @@
                     <navigationItem key="navigationItem" id="SE2-pd-Mrk"/>
                     <connections>
                         <segue destination="B5t-8P-scV" kind="showDetail" identifier="MyListingsBackToHome" id="WU5-7b-FtB"/>
+                        <segue destination="k9a-kb-0OD" kind="show" identifier="ShowOffersSegue" id="lwT-ak-kcV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08q-cF-Hwp" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -25,14 +25,23 @@ class OfferController < ApplicationController
   end
 
   #find all offers for a given user
-  def find_user_id
-    @offers = Offer.where("user_id = ?",params[:user_id]).all
-    if !@offers.empty?
-      ret = []
-      @offers.each do |offer|
-        ret << offer.as_json(include: :listing)
+  def find_listing_id
+    listings = Listing.where("id = ?",params[:listing_id]).to_a
+    if !listings.empty?
+      listing_ids = []
+      listings.each do |listing|
+        listing_ids << listing.id
       end
-      render :json => ret
+      @offers = Offer.includes(:listing => :book).where("listing_id IN (?)", listing_ids).all
+      if !@offers.empty?
+        ret = []
+        @offers.each do |offer|
+          ret << offer.as_json(:include => {:listing => {:include => {:book => {:only => :title}}}, :user => {:only => :username}})
+        end
+        render :json => ret
+      else
+        render :json => "user has no offers".to_json
+      end
     else
       render :json => "user has no offers".to_json
     end

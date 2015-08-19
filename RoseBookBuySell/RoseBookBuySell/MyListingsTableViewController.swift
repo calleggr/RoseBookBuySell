@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class MyListingsTableViewController: UITableViewController {
     
@@ -63,51 +64,31 @@ class MyListingsTableViewController: UITableViewController {
         // Return the number of rows in the section.
         return myListings!.count
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println(myListings![indexPath.row].id)
+        if (myOffers == nil){
+            myOffers = []
+        } else {
+            myOffers!.removeAll(keepCapacity: true)
+        }
+        handleGetMyOffers(myListings![indexPath.row].id, { (json : JSON?) -> Void in
+            if (json != nil) {
+                for var i = 0; i < json!.count; ++i {
+                    var currentOffer = Offer(id: json![i]["id"].intValue, price: json![i]["price"].intValue, listing_id: json![i]["listing_id"].intValue, user_id: json![i]["user"].intValue, user_name: json![i]["user"]["username"].stringValue, book_title: json![i]["listing"]["book"]["title"].stringValue)
+                    myOffers!.append(currentOffer)
+                }
+                self.performSegueWithIdentifier("ShowOffersSegue", sender: self)
+            } else {
+                let alert = UIAlertView()
+                alert.title = "This listing has no offers!"
+                alert.message = "You'll get an email when you get some!"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+            }
+        })
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
